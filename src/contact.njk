@@ -1,0 +1,231 @@
+---
+layout: base.njk
+title: Contact
+description: Get in touch with Sit Raleigh — Theravāda meditation in Raleigh, NC.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Get in touch</p>
+    <h1 class="page-headline">Contact</h1>
+    <p class="page-sub">Questions about sitting with us, individual instruction, or anything else — feel free to reach out directly.</p>
+  </div>
+</div>
+
+<section class="section section--white">
+  <div class="section-inner" style="max-width:680px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+      <div>
+        <div class="section-label">Email</div>
+        <p style="font-size:15px;color:var(--umber-lt);margin-bottom:1rem;">The best way to reach Cary directly.</p>
+        <a href="mailto:{{ about.email }}" style="font-family:var(--font-display);font-size:20px;color:var(--gold);text-decoration:none;border-bottom:0.5px solid var(--gold);padding-bottom:2px;">{{ about.email }}</a>
+
+        <div class="section-label" style="margin-top:2.5rem;">Individual instruction</div>
+        <p style="font-size:14px;line-height:1.8;color:var(--umber-lt);">Cary offers individual instruction for those who would like personal guidance in their practice. Please email first to schedule a time.</p>
+      </div>
+      <div>
+        <div class="section-label">Where to find us</div>
+        <div class="locations-stack">
+          {% for place in locations.places %}
+          <div style="background:var(--parchment-2);border:0.5px solid rgba(122,96,48,0.15);border-radius:var(--radius-md);padding:16px;">
+            <div style="font-size:13px;font-weight:500;color:var(--umber-mid);margin-bottom:4px;">{{ place.name }}</div>
+            <div style="font-size:12px;color:var(--umber-lt);line-height:1.6;">{{ place.address }}</div>
+            {% if place.map_link %}
+            <a href="{{ place.map_link }}" class="location-link" target="_blank" rel="noopener" style="color:var(--gold);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-bottom:0.5px solid var(--gold);display:inline-block;margin-top:8px;">Map &rarr;</a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if mailing_list.enabled %}
+<section class="mailing-list-section" aria-labelledby="ml-heading">
+  <div class="mailing-list-inner">
+    <div class="ml-lotus" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 34 C20 34 8 26 8 18 C8 12 13 8 20 8 C27 8 32 12 32 18 C32 26 20 34 20 34Z" stroke="rgba(212,184,122,0.4)" stroke-width="0.8" fill="none"/>
+        <path d="M20 34 C20 34 10 22 13 15 C15 10 20 8 20 8 C20 8 25 10 27 15 C30 22 20 34 20 34Z" stroke="rgba(212,184,122,0.55)" stroke-width="0.8" fill="none"/>
+        <path d="M20 34 C20 34 12 20 16 13 C18 9 20 8 20 8 C20 8 22 9 24 13 C28 20 20 34 20 34Z" stroke="rgba(212,184,122,0.7)" stroke-width="0.8" fill="rgba(122,96,48,0.06)"/>
+        <circle cx="20" cy="20" r="2" fill="rgba(212,184,122,0.6)"/>
+      </svg>
+    </div>
+
+    <h2 class="ml-heading" id="ml-heading">{{ mailing_list.heading }}</h2>
+    <p class="ml-sub">{{ mailing_list.subheading }}</p>
+
+    {% if mailing_list.provider == "mailchimp" and mailing_list.form_action %}
+    {# ── Mailchimp embed ─────────────────────────── #}
+    <form
+      action="{{ mailing_list.form_action }}"
+      method="post"
+      target="_blank"
+      class="ml-form"
+      novalidate
+    >
+      <div class="ml-input-row">
+        <label for="ml-email" class="sr-only">Email address</label>
+        <input
+          type="email"
+          name="EMAIL"
+          id="ml-email"
+          placeholder="{{ mailing_list.placeholder }}"
+          required
+          autocomplete="email"
+        />
+        {# Mailchimp bot-buster — do not remove #}
+        <div aria-hidden="true" style="position:absolute;left:-5000px;">
+          <input type="text" name="b_REPLACE_ME" tabindex="-1" value="" />
+        </div>
+        <button type="submit" class="ml-btn">{{ mailing_list.button_label }}</button>
+      </div>
+    </form>
+
+    {% elif mailing_list.provider == "convertkit" and mailing_list.form_action %}
+    {# ── ConvertKit embed ────────────────────────── #}
+    <form
+      action="{{ mailing_list.form_action }}"
+      method="post"
+      class="ml-form"
+      novalidate
+    >
+      <div class="ml-input-row">
+        <label for="ml-email-ck" class="sr-only">Email address</label>
+        <input
+          type="email"
+          name="email_address"
+          id="ml-email-ck"
+          placeholder="{{ mailing_list.placeholder }}"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="ml-btn">{{ mailing_list.button_label }}</button>
+      </div>
+    </form>
+
+    {% else %}
+    {# ── No provider yet — placeholder ──────────── #}
+    <div class="ml-form">
+      <div class="ml-input-row">
+        <label for="ml-email-ph" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="ml-email-ph"
+          placeholder="{{ mailing_list.placeholder }}"
+          autocomplete="email"
+          disabled
+          title="Mailing list coming soon"
+        />
+        <button type="button" class="ml-btn" disabled>{{ mailing_list.button_label }}</button>
+      </div>
+      <p class="ml-coming-soon">Mailing list setup in progress — check back soon.</p>
+    </div>
+    {% endif %}
+
+    <p class="ml-fine-print">{{ mailing_list.fine_print }}</p>
+  </div>
+</section>
+{% endif %}
+
+<style>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+.mailing-list-section {
+  background: var(--umber);
+  padding: clamp(3rem, 6vw, 5rem) var(--pad);
+}
+.mailing-list-inner {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ml-lotus {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.ml-heading {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 300;
+  color: var(--parchment);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.ml-sub {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--gold-lt);
+  margin-bottom: 28px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ml-form {
+  width: 100%;
+}
+.ml-input-row {
+  display: flex;
+  gap: 0;
+  border: 0.5px solid rgba(212,184,122,0.3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+.ml-input-row input[type="email"] {
+  flex: 1;
+  padding: 13px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: var(--parchment);
+  outline: none;
+  min-width: 0;
+}
+.ml-input-row input[type="email"]::placeholder { color: rgba(168,144,96,0.6); }
+.ml-input-row input[type="email"]:disabled { opacity: 0.5; cursor: not-allowed; }
+.ml-btn {
+  flex-shrink: 0;
+  padding: 13px 22px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--parchment);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.ml-btn:hover:not(:disabled) { background: var(--gold-pale); color: var(--umber); }
+.ml-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ml-fine-print {
+  font-size: 11px;
+  color: rgba(122,96,48,0.5);
+  margin-top: 14px;
+  letter-spacing: 0.03em;
+}
+.ml-coming-soon {
+  font-size: 12px;
+  color: rgba(168,144,96,0.6);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .ml-input-row { flex-direction: column; }
+  .ml-btn { border-radius: 0; }
+}
+</style>

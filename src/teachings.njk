@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: Recorded Teachings
+description: Recorded dharma talks and guided meditations from Sit Raleigh, guided by Cary Keishin Brief.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Dharma talks &amp; guided sits</p>
+    <h1 class="page-headline">Recorded Teachings</h1>
+    <p class="page-sub">Audio and video recordings from our weekly sessions. Listen at your own pace, revisit what resonates.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    <div class="teachings-grid">
+      {% for teaching in collections.teachings | sortByDate | reverse %}
+      <a href="{{ teaching.url }}" class="teaching-row">
+        <div class="play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="teaching-info">
+          <div class="teaching-title">{{ teaching.data.title }}</div>
+          <div class="teaching-meta">
+            {{ teaching.data.date | shortDate }}
+            {% if teaching.data.duration %}&middot; {{ teaching.data.duration }}{% endif %}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

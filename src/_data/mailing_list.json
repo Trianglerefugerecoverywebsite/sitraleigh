@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "heading": "Stay in the flow",
+  "subheading": "A occasional note with upcoming sits, events, and reflections from Cary. No noise — just what matters.",
+  "button_label": "Subscribe",
+  "provider": "mailchimp",
+  "form_action": "",
+  "placeholder": "your@email.com",
+  "success_message": "Thank you — you'll hear from us soon.",
+  "fine_print": "No spam, ever. Unsubscribe anytime."
+}

@@ -1,0 +1,52 @@
+---
+layout: base.njk
+title: About
+description: Learn about Cary Keishin Brief and the Sit Raleigh Theravāda meditation community.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">The teacher &amp; community</p>
+    <h1 class="page-headline">About</h1>
+  </div>
+</div>
+
+<section class="section section--white">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:start;">
+      <div>
+        {% if about.photo %}
+        <img src="{{ about.photo }}" alt="{{ about.teacher_name }}" style="width:100%;border-radius:var(--radius-md);object-fit:cover;aspect-ratio:3/4;" />
+        {% else %}
+        <div style="width:100%;aspect-ratio:3/4;background:var(--parchment-2);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(122,96,48,0.3)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <div class="section-label">{{ about.teacher_name }}</div>
+        {% if about.pull_quote %}
+        <blockquote style="font-family:var(--font-display);font-style:italic;font-size:26px;font-weight:300;color:var(--umber);line-height:1.5;border-left:2px solid var(--gold);padding-left:1.25rem;margin-bottom:1.5rem;">&ldquo;{{ about.pull_quote }}&rdquo;</blockquote>
+        {% endif %}
+        <div class="rich-text">
+          {{ about.bio_full | safe }}
+        </div>
+        {% if about.tradition %}
+        <p style="margin-top:1.5rem;font-size:12px;color:var(--gold-lt);letter-spacing:0.06em;">Tradition: {{ about.tradition }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--parchment">
+  <div class="section-inner" style="max-width:680px;">
+    <div class="section-label">About Sit Raleigh</div>
+    <div class="rich-text">
+      <p>Sit Raleigh is a donation-based meditation community rooted in the Theravāda Buddhist tradition. We gather weekly for sitting meditation, walking meditation, and dharma talks grounded in the Buddha's early teachings.</p>
+      <p>All programs are offered by <em>dana</em> — generosity — with a suggested donation of $10. No one is turned away for lack of funds, and no prior experience is needed.</p>
+      <h2>What to expect</h2>
+      <p>A typical Tuesday evening session includes a period of guided seated meditation, a short dharma talk, and open discussion. Saturday morning sessions at the NC Museum of Art feature a silent sit outdoors, weather permitting.</p>
+    </div>
+  </div>
+</section>

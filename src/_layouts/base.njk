@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if title %}{{ title }} — {% endif %}{{ settings.site_title }}</title>
+  <meta name="description" content="{{ description or settings.meta_description }}" />
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ settings.site_title }}" />
+  <meta property="og:description" content="{{ description or settings.meta_description }}" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {% if settings.ga_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ settings.ga_id }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+
+  {% if settings.show_announcement and settings.announcement %}
+  <div class="announcement-bar" role="banner">{{ settings.announcement }}</div>
+  {% endif %}
+
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="{{ settings.site_title }} home">
+          Sit <span>Raleigh</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('nav-links').classList.toggle('open')">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="6" x2="19" y2="6"/>
+            <line x1="3" y1="11" x2="19" y2="11"/>
+            <line x1="3" y1="16" x2="19" y2="16"/>
+          </svg>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="/schedule/" {% if page.url == "/schedule/" %}aria-current="page"{% endif %}>Schedule</a></li>
+          <li><a href="/teachings/" {% if page.url == "/teachings/" %}aria-current="page"{% endif %}>Teachings</a></li>
+          <li><a href="/events/" {% if page.url == "/events/" %}aria-current="page"{% endif %}>Retreats</a></li>
+          <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+          <li><a href="/glossary/" {% if page.url == "/glossary/" %}aria-current="page"{% endif %}>Glossary</a></li>
+          <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Sit Raleigh</div>
+        <div class="footer-tagline">{{ settings.tagline }}</div>
+      </div>
+      <div>
+        <div class="footer-col-label">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="/schedule/">Schedule</a></li>
+          <li><a href="/teachings/">Teachings</a></li>
+          <li><a href="/events/">Retreats & Events</a></li>
+          <li><a href="/glossary/">Pāli Glossary</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-label">Practice locations</div>
+        <ul class="footer-links">
+          {% for place in locations.places %}
+          <li>
+            {% if place.map_link %}
+            <a href="{{ place.map_link }}" target="_blank" rel="noopener">{{ place.name }}</a>
+            {% else %}
+            {{ place.name }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {{ settings.site_title }} {{ page.date.getFullYear() }}</span>
+      <span>Teaching offered by dana &mdash; all are welcome</span>
+    </div>
+  </footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

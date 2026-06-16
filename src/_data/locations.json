@@ -1,0 +1,28 @@
+{
+  "places": [
+    {
+      "name": "GreenDoor Vitality",
+      "address": "704 Glenwood Ave, Raleigh, NC 27603",
+      "map_embed": "",
+      "map_link": "https://maps.google.com/?q=704+Glenwood+Ave+Raleigh+NC",
+      "parking": "Free parking in the rear of the building.",
+      "notes": "Tuesday evening sits, 7:00–8:00 PM"
+    },
+    {
+      "name": "NC Museum of Art",
+      "address": "2110 Blue Ridge Rd, Raleigh, NC 27607",
+      "map_embed": "",
+      "map_link": "https://maps.google.com/?q=2110+Blue+Ridge+Rd+Raleigh+NC",
+      "parking": "Parking lot available on site.",
+      "notes": "Saturday morning sits at 9:25 AM. Meet near the small building by the smokestack. Sit in the grassy circle at the top of the hill."
+    },
+    {
+      "name": "Dix Park — Interfaith Chapel",
+      "address": "1201 Spring Dr, Raleigh, NC 27603",
+      "map_embed": "",
+      "map_link": "https://maps.google.com/?q=Dix+Park+Interfaith+Chapel+Raleigh+NC",
+      "parking": "",
+      "notes": "Monthly weekday meditations — sign up via Eventbrite."
+    }
+  ]
+}

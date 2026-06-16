@@ -1,0 +1,186 @@
+{
+  "terms": [
+    {
+      "term": "Anicca",
+      "pronunciation": "ah-NI-chah",
+      "translation": "Impermanence",
+      "definition": "One of the three marks of existence. All conditioned phenomena arise, persist for a time, and pass away. Seeing impermanence clearly in our own experience is a foundation of insight practice.",
+      "category": "Three Marks"
+    },
+    {
+      "term": "Anattā",
+      "pronunciation": "ah-NAT-tah",
+      "translation": "Non-self",
+      "definition": "One of the three marks of existence. What we call 'self' is a dynamic process — a collection of changing physical and mental phenomena — rather than a fixed, independent entity.",
+      "category": "Three Marks"
+    },
+    {
+      "term": "Dukkha",
+      "pronunciation": "DOO-kah",
+      "translation": "Suffering, unsatisfactoriness",
+      "definition": "One of the three marks of existence. Dukkha encompasses obvious suffering, the suffering inherent in change, and the subtle unsatisfactoriness of conditioned existence itself. The First Noble Truth.",
+      "category": "Three Marks"
+    },
+    {
+      "term": "Dhamma",
+      "pronunciation": "DAH-mah",
+      "translation": "The teaching; the truth; phenomena",
+      "definition": "Used in multiple senses: the Buddha's teachings, the truth or law of nature those teachings point to, and (in the plural, dhammā) the basic phenomena of experience.",
+      "category": "Core Concepts"
+    },
+    {
+      "term": "Sangha",
+      "pronunciation": "SANG-hah",
+      "translation": "Community",
+      "definition": "The community of practitioners. In the narrow sense, the monastic community; in the broader sense, all those practicing the Dhamma together. One of the Three Jewels.",
+      "category": "Core Concepts"
+    },
+    {
+      "term": "Buddha",
+      "pronunciation": "BOO-dah",
+      "translation": "Awakened one",
+      "definition": "One who has fully awakened to the nature of reality and is free from suffering. The historical Buddha, Siddhattha Gotama, is one who rediscovered and taught this path. One of the Three Jewels.",
+      "category": "Core Concepts"
+    },
+    {
+      "term": "Nibbāna",
+      "pronunciation": "ni-BAH-nah",
+      "translation": "Liberation; the unconditioned",
+      "definition": "The cessation of craving, aversion, and delusion — and thus of suffering. Often described as the 'blowing out' of the fires of greed, hatred, and ignorance. The goal of the path.",
+      "category": "Core Concepts"
+    },
+    {
+      "term": "Sīla",
+      "pronunciation": "SEE-lah",
+      "translation": "Ethical conduct",
+      "definition": "Moral virtue — the first of the three trainings (sīla, samādhi, paññā). Ethical conduct supports and arises from meditation practice; the two are mutually reinforcing.",
+      "category": "The Three Trainings"
+    },
+    {
+      "term": "Samādhi",
+      "pronunciation": "sah-MAH-dee",
+      "translation": "Concentration; unification of mind",
+      "definition": "The second of the three trainings. The collected, stable, unified quality of mind developed through meditation. Samādhi supports the arising of insight.",
+      "category": "The Three Trainings"
+    },
+    {
+      "term": "Paññā",
+      "pronunciation": "PAN-yah",
+      "translation": "Wisdom; insight",
+      "definition": "The third of the three trainings. Wisdom in the Buddhist sense is not merely intellectual knowledge but direct seeing of the nature of experience — particularly of impermanence, unsatisfactoriness, and non-self.",
+      "category": "The Three Trainings"
+    },
+    {
+      "term": "Kāmacchanda",
+      "pronunciation": "kah-mah-CHAN-dah",
+      "translation": "Sensory desire",
+      "definition": "The first of the five hindrances. The pull toward pleasant sensory experience — sights, sounds, tastes, smells, touch, and mental pleasures. Not inherently wrong, but when it dominates the mind it obstructs meditation.",
+      "category": "Five Hindrances"
+    },
+    {
+      "term": "Vyāpāda",
+      "pronunciation": "vyah-PAH-dah",
+      "translation": "Ill will; aversion",
+      "definition": "The second of the five hindrances. Resistance, hostility, or ill will toward experience — people, situations, or oneself. Its antidote is the cultivation of mettā (loving-kindness).",
+      "category": "Five Hindrances"
+    },
+    {
+      "term": "Thīna-middha",
+      "pronunciation": "TEE-nah MID-dah",
+      "translation": "Sloth and torpor",
+      "definition": "The third of the five hindrances. Heaviness of body or dullness of mind that weighs down energy and awareness in meditation. Antidotes include brightening the attention, changing posture, or reflecting on the preciousness of practice.",
+      "category": "Five Hindrances"
+    },
+    {
+      "term": "Uddhacca-kukkucca",
+      "pronunciation": "ud-HACH-ah koo-KOO-chah",
+      "translation": "Restlessness and worry",
+      "definition": "The fourth of the five hindrances. The agitated, scattered quality of mind that leaps from object to object, or the nagging quality of worry and remorse. Its antidote is stillness and settling.",
+      "category": "Five Hindrances"
+    },
+    {
+      "term": "Vicikicchā",
+      "pronunciation": "vi-chi-KI-chah",
+      "translation": "Doubt",
+      "definition": "The fifth of the five hindrances. Paralyzing uncertainty about the practice, the teacher, or the path — not healthy questioning, but the kind of doubt that prevents engagement. Overcome through direct investigation and trust in one's own experience.",
+      "category": "Five Hindrances"
+    },
+    {
+      "term": "Mettā",
+      "pronunciation": "MET-tah",
+      "translation": "Loving-kindness; goodwill",
+      "definition": "The first of the four Brahmavihāras (divine abodes). An unconditional goodwill toward all beings, beginning with oneself. Mettā practice is both a concentration practice and a direct antidote to ill will.",
+      "category": "Four Brahmavihāras"
+    },
+    {
+      "term": "Karuṇā",
+      "pronunciation": "kah-ROO-nah",
+      "translation": "Compassion",
+      "definition": "The second of the four Brahmavihāras. The response to suffering with the wish that it be relieved. Distinguished from pity — compassion holds both the pain and the spaciousness to be with it.",
+      "category": "Four Brahmavihāras"
+    },
+    {
+      "term": "Muditā",
+      "pronunciation": "moo-DEE-tah",
+      "translation": "Sympathetic joy; appreciative joy",
+      "definition": "The third of the four Brahmavihāras. Delight in the well-being and happiness of others. Its near enemy is self-congratulation; its far enemy is envy.",
+      "category": "Four Brahmavihāras"
+    },
+    {
+      "term": "Upekkhā",
+      "pronunciation": "oo-PEK-kah",
+      "translation": "Equanimity",
+      "definition": "The fourth of the four Brahmavihāras. A balanced, stable mind that is neither pulled toward nor pushed away from experience. Not indifference — equanimity is warm and present, but not destabilized.",
+      "category": "Four Brahmavihāras"
+    },
+    {
+      "term": "Sati",
+      "pronunciation": "SAH-tee",
+      "translation": "Mindfulness; awareness",
+      "definition": "The quality of clear, present-moment awareness. One of the seven factors of awakening and the foundation of vipassanā practice. The Satipaṭṭhāna Sutta describes four foundations of mindfulness: body, feelings, mind states, and phenomena.",
+      "category": "Meditation"
+    },
+    {
+      "term": "Vipassanā",
+      "pronunciation": "vi-PAH-sah-nah",
+      "translation": "Insight meditation",
+      "definition": "Direct seeing into the nature of experience — particularly the three marks of existence. Vipassanā is not a technique so much as the quality of clear knowing that arises when attention is stable and unobstructed.",
+      "category": "Meditation"
+    },
+    {
+      "term": "Samatha",
+      "pronunciation": "SAH-mah-tah",
+      "translation": "Calm abiding; tranquility",
+      "definition": "Meditation that develops stillness, calm, and concentration. Samatha and vipassanā are often described as two wings of a bird — neither alone is sufficient for liberation.",
+      "category": "Meditation"
+    },
+    {
+      "term": "Ānāpānasati",
+      "pronunciation": "ah-nah-PAH-nah-SAH-tee",
+      "translation": "Mindfulness of breathing",
+      "definition": "A foundational meditation practice: bringing careful, sustained attention to the physical sensations of the breath. Described in the Ānāpānasati Sutta as capable of fulfilling all four foundations of mindfulness.",
+      "category": "Meditation"
+    },
+    {
+      "term": "Dana",
+      "pronunciation": "DAH-nah",
+      "translation": "Generosity; gift",
+      "definition": "The first of the ten pāramīs (perfections). In the Theravāda tradition, teachings are traditionally offered by dana — the teacher gives freely, and students offer what they can in return. A practice in its own right.",
+      "category": "Core Concepts"
+    },
+    {
+      "term": "Samma Diṭṭhi",
+      "pronunciation": "SAM-mah DIT-tee",
+      "translation": "Right view; wise understanding",
+      "definition": "The first factor of the Noble Eightfold Path. Understanding the nature of suffering, its cause, its cessation, and the path leading to its cessation. Not dogmatic belief, but a way of seeing that aligns with how things actually are.",
+      "category": "Noble Eightfold Path"
+    },
+    {
+      "term": "Pāramī",
+      "pronunciation": "PAH-rah-mee",
+      "translation": "Perfection; spiritual quality",
+      "definition": "The ten qualities cultivated on the path to liberation: generosity, virtue, renunciation, wisdom, energy, patience, truthfulness, resolve, loving-kindness, and equanimity.",
+      "category": "Core Concepts"
+    }
+  ]
+}

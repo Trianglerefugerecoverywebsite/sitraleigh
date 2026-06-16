@@ -1,0 +1,103 @@
+---
+layout: base.njk
+title: Schedule
+description: Weekly meditation sits with Sit Raleigh — Tuesday evenings and Saturday mornings in Raleigh, NC.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">When &amp; where we sit</p>
+    <h1 class="page-headline">Schedule</h1>
+    <p class="page-sub">All sits are open to everyone — seasoned practitioners and first-timers alike. Arrive a few minutes early to settle in.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    <div class="section-label">Regular sits</div>
+    <div class="schedule-cards">
+      {% for sit in schedule.sits %}
+      <div class="schedule-card">
+        {% if sit.format == "Online (Zoom)" %}
+        <div class="format-badge format-badge--online">Online &middot; Zoom</div>
+        {% elif sit.format == "Outdoor" %}
+        <div class="format-badge format-badge--outdoor">Outdoor</div>
+        {% else %}
+        <div class="format-badge format-badge--inperson">In-person</div>
+        {% endif %}
+        <div class="schedule-card-day">{{ sit.day }}</div>
+        <div class="schedule-card-time">{{ sit.time }}</div>
+        <div class="schedule-card-loc">{{ sit.location }}</div>
+        {% if sit.notes %}
+        <div class="schedule-card-notes">{{ sit.notes }}</div>
+        {% endif %}
+        {% if sit.link %}
+        <p style="margin-top:14px">
+          <a href="{{ sit.link }}" class="btn-primary" target="_blank" rel="noopener">Join &rarr;</a>
+        </p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% set upcomingEvents = collections.events | sortByDate | futureOnly %}
+{% if upcomingEvents.length %}
+<section class="section section--white">
+  <div class="section-inner">
+    <div class="section-label">Special events &amp; retreats</div>
+    <div class="events-grid">
+      {% for event in upcomingEvents %}
+      {% set md = event.data.date | monthDay %}
+      <a href="{{ event.url }}" class="event-card">
+        <div class="event-month">{{ md.month }}</div>
+        <div class="event-day">{{ md.day }}</div>
+        <div class="event-title">{{ event.data.title }}</div>
+        <div class="event-meta">
+          {% if event.data.time %}{{ event.data.time }}<br>{% endif %}
+          {{ event.data.location_name }}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--dark">
+  <div class="about-map-grid">
+    <div>
+      <div class="section-label">Practice locations</div>
+      <div class="locations-stack">
+        {% for place in locations.places %}
+        <div class="location-card">
+          <div class="location-name">{{ place.name }}</div>
+          <div class="location-addr">{{ place.address }}</div>
+          {% if place.parking %}
+          <div class="location-addr" style="margin-top:4px;">🅿 {{ place.parking }}</div>
+          {% endif %}
+          {% if place.notes %}
+          <div class="location-addr" style="margin-top:4px;font-style:italic;">{{ place.notes }}</div>
+          {% endif %}
+          {% if place.map_link %}
+          <a href="{{ place.map_link }}" class="location-link" target="_blank" rel="noopener">Open in Maps &rarr;</a>
+          {% endif %}
+          {% if place.map_embed %}
+          <div class="map-embed">
+            <iframe src="{{ place.map_embed }}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of {{ place.name }}"></iframe>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Questions?</div>
+      <p class="about-body">Not sure which sit to attend, or have a question before coming for the first time? Feel free to reach out.</p>
+      <p style="margin-top:20px">
+        <a href="/contact/" class="btn-primary">Get in touch &rarr;</a>
+      </p>
+    </div>
+  </div>
+</section>

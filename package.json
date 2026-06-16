@@ -1,0 +1,13 @@
+{
+  "name": "sitraleigh",
+  "version": "1.0.0",
+  "description": "Sit Raleigh — Theravada Meditation Community",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}

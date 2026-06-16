@@ -1,0 +1,20 @@
+{
+  "sits": [
+    {
+      "day": "Tuesday",
+      "time": "7:00 – 8:00 PM",
+      "location": "GreenDoor Vitality",
+      "format": "In-person",
+      "notes": "704 Glenwood Ave, Raleigh NC — free parking in rear",
+      "link": ""
+    },
+    {
+      "day": "Saturday",
+      "time": "9:25 AM",
+      "location": "NC Museum of Art",
+      "format": "Outdoor",
+      "notes": "Meet at the small building near the smokestack. Bring a cushion. Cancelled during storms.",
+      "link": ""
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+---
+layout: base.njk
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">
+      <a href="/events/" style="color:var(--gold);text-decoration:none;">&larr; Events &amp; Retreats</a>
+    </p>
+    {% set md = date | monthDay %}
+    <p style="font-family:var(--font-display);font-size:48px;font-weight:300;color:var(--gold-lt);line-height:1;margin:12px 0 6px;">{{ md.month }} {{ md.day }}</p>
+    <h1 class="page-headline">{{ title }}</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;font-size:13px;color:var(--umber-lt);">
+      {% if time %}
+      <span>&#128337; {{ time }}</span>
+      {% endif %}
+      <span>&#128205; {{ location_name }}{% if location_address %}, {{ location_address }}{% endif %}</span>
+    </div>
+  </div>
+</div>
+
+<section class="section section--white">
+  <div class="section-inner" style="max-width:760px;">
+
+    {# ── Two-column layout when embedding Eventbrite ── #}
+    {% if eventbrite and eventbrite.event_id and eventbrite.embed %}
+    <div class="event-content-grid">
+
+      <div class="event-main-col">
+        {% if photo %}
+        <img src="{{ photo }}" alt="{{ title }}" class="event-photo" />
+        {% endif %}
+        <div class="rich-text">{{ description | nl2br | safe }}</div>
+      </div>
+
+      <aside class="event-ticket-col">
+        <div class="ticket-widget-card">
+          <div class="ticket-widget-label">Tickets</div>
+
+          {# Eventbrite embedded checkout widget #}
+          <div id="eventbrite-widget-container-{{ eventbrite.event_id }}"></div>
+
+          <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+          <script>
+            var exampleCallback = function() {
+              // Ticket order complete
+            };
+            window.EBWidgets.createWidget({
+              widgetType: 'checkout',
+              eventId: '{{ eventbrite.event_id }}',
+              iframeContainerId: 'eventbrite-widget-container-{{ eventbrite.event_id }}',
+              iframeContainerHeight: 420,
+              onOrderComplete: exampleCallback
+            });
+          </script>
+
+          {% if eventbrite.url %}
+          <a href="{{ eventbrite.url }}" class="eb-link" target="_blank" rel="noopener">
+            View on Eventbrite &rarr;
+          </a>
+          {% endif %}
+        </div>
+      </aside>
+
+    </div>
+
+    {% else %}
+
+    {# ── Single-column layout (no embed) ── #}
+    {% if photo %}
+    <img src="{{ photo }}" alt="{{ title }}" class="event-photo" />
+    {% endif %}
+
+    <div class="rich-text">{{ description | nl2br | safe }}</div>
+
+    <div class="event-cta-row">
+      {% if eventbrite and eventbrite.url %}
+      <a href="{{ eventbrite.url }}" class="btn-primary eb-btn" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="vertical-align:-2px;margin-right:6px;"><rect x="2" y="5" width="20" height="15" rx="2"/><path d="M2 9h20"/><path d="M7 3v4M17 3v4"/></svg>
+        {{ eventbrite.button_label or "Get tickets on Eventbrite →" }}
+      </a>
+      {% elif registration_link %}
+      <a href="{{ registration_link }}" class="btn-primary" target="_blank" rel="noopener">
+        {{ registration_label or "Register →" }}
+      </a>
+      {% endif %}
+      {% if map_link %}
+      <a href="{{ map_link }}" class="btn-outline" target="_blank" rel="noopener">Open in Maps &rarr;</a>
+      {% endif %}
+    </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
+{# ── Map embed (full width below content) ── #}
+{% if map_embed %}
+<section class="section section--parchment-2" style="padding-top:0;">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="map-embed">
+      <iframe src="{{ map_embed }}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map for {{ title }}"></iframe>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Other upcoming events ── #}
+{% set otherEvents = collections.events | sortByDate | futureOnly | limit(3) %}
+{% if otherEvents.length > 1 %}
+<section class="section section--parchment">
+  <div class="section-inner">
+    <div class="section-label">More upcoming events</div>
+    <div class="events-grid">
+      {% for event in otherEvents %}
+      {% if event.url != page.url %}
+      {% set md2 = event.data.date | monthDay %}
+      <a href="{{ event.url }}" class="event-card">
+        <div class="event-month">{{ md2.month }}</div>
+        <div class="event-day">{{ md2.day }}</div>
+        <div class="event-title">{{ event.data.title }}</div>
+        <div class="event-meta">{{ event.data.location_name }}</div>
+        {% if event.data.eventbrite and event.data.eventbrite.url %}
+        <span class="event-tag">Tickets available</span>
+        {% endif %}
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<style>
+.event-photo {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  object-fit: cover;
+  max-height: 400px;
+}
+.event-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+.event-main-col {}
+.event-ticket-col {
+  position: sticky;
+  top: 90px;
+}
+.ticket-widget-card {
+  background: var(--parchment);
+  border: 0.5px solid rgba(122,96,48,0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow: hidden;
+}
+.ticket-widget-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+#eventbrite-widget-container-{{ eventbrite.event_id if eventbrite }} iframe {
+  border-radius: var(--radius-md);
+}
+.eb-link {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(122,96,48,0.3);
+  padding-bottom: 1px;
+}
+.eb-link:hover { color: var(--gold); }
+
+.event-cta-row {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid rgba(122,96,48,0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.eb-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .event-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .event-ticket-col {
+    position: static;
+    order: -1;
+  }
+}
+</style>

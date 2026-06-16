@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Retreats & Events
+description: Upcoming retreats, day-longs, and special events with Sit Raleigh in Raleigh, NC.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Deepen your practice</p>
+    <h1 class="page-headline">Retreats &amp; Events</h1>
+    <p class="page-sub">Day-longs, outdoor sits, and special programs beyond the weekly schedule.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    {% set futureEvents = collections.events | sortByDate | futureOnly %}
+    {% set pastEvents   = collections.events | sortByDate | reverse %}
+
+    {% if futureEvents.length %}
+    <div class="section-label">Coming up</div>
+    <div class="events-grid">
+      {% for event in futureEvents %}
+      {% set md = event.data.date | monthDay %}
+      <a href="{{ event.url }}" class="event-card">
+        <div class="event-month">{{ md.month }}</div>
+        <div class="event-day">{{ md.day }}</div>
+        <div class="event-title">{{ event.data.title }}</div>
+        <div class="event-meta">
+          {% if event.data.time %}{{ event.data.time }}<br>{% endif %}
+          {{ event.data.location_name }}
+        </div>
+        {% if event.data.eventbrite and event.data.eventbrite.url %}
+        <span class="event-tag">Tickets available</span>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if eventbrite_settings.show_all_link and eventbrite_settings.organizer_url %}
+    <p style="margin-top:24px;">
+      <a href="{{ eventbrite_settings.organizer_url }}" class="btn-outline" target="_blank" rel="noopener">
+        All events on Eventbrite &rarr;
+      </a>
+    </p>
+    {% endif %}
+
+    {% else %}
+    <p style="color:var(--umber-lt);font-style:italic;">No upcoming events are scheduled right now. Check back soon, or <a href="/contact/" style="color:var(--gold)">contact us</a> to be added to the mailing list.</p>
+    {% endif %}
+
+    {% if pastEvents.length %}
+    <div class="section-label" style="margin-top:4rem;">Past events</div>
+    <div class="events-grid">
+      {% for event in pastEvents | limit(6) %}
+      {% set md = event.data.date | monthDay %}
+      <a href="{{ event.url }}" class="event-card" style="opacity:0.6;">
+        <div class="event-month">{{ md.month }}</div>
+        <div class="event-day">{{ md.day }}</div>
+        <div class="event-title">{{ event.data.title }}</div>
+        <div class="event-meta">{{ event.data.location_name }}</div>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
