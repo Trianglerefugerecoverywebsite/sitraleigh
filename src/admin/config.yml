@@ -97,6 +97,7 @@ collections:
     label_singular: "Blog Post"
     folder: "src/blog"
     create: true
+    delete: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}}"
     fields:
