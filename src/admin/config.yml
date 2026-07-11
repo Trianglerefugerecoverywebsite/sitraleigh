@@ -91,6 +91,25 @@ collections:
       - { label: "Media Type", name: "media_type", widget: "select", options: ["audio", "video", "youtube"], default: "audio" }
       - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, eightfold-path, metta" }
 
+  # ─── WEEKLY BLOG ────────────────────────────────────────────────────────────
+  - name: "blog"
+    label: "Weekly Blog"
+    label_singular: "Blog Post"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Author", name: "author", widget: "string", default: "Cary Keishin Brief" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the blog list and previews." }
+      - { label: "Continuing this week's teaching", name: "newsletter_teaching", widget: "string", required: false, hint: "The newsletter teaching this post expands on, e.g. The Five Hindrances: Ill Will (Vyāpāda). Leave blank if none." }
+      - { label: "Instagram video URL", name: "instagram_url", widget: "string", required: false, hint: "Paste the Instagram post or reel link for the weekly ~1 min talk. Leave blank if none." }
+      - { label: "Featured image", name: "featured_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching — write freely. Headings, quotes, and links all work." }
+      - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, metta, mindfulness" }
+
   # ─── SITE PAGES (rich text) ─────────────────────────────────────────────────
   - name: "pages"
     label: "Pages"
