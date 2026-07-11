@@ -3,26 +3,23 @@ layout: base.njk
 title: false
 ---
 
-{# ── LOGO BANNER (home only) ────────────────────────────── #}
-<section class="home-logo-hero" aria-label="Sit Raleigh Meditation Society">
-  <img src="/images/sit-raleigh-logo.png" alt="Sit Raleigh Meditation Society" class="home-logo" />
-</section>
-
-{# ── HERO ──────────────────────────────────────────────── #}
+{# ── HERO WITH LOGO ─────────────────────────────────────── #}
 <section aria-label="Welcome">
-  <div class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">{{ settings.tagline }}</p>
-      <h1 class="hero-headline">
-        Still the<br>mind.<br><em>Open</em> the<br>heart.
-      </h1>
-      <p class="hero-sub">
-        Weekly sits, dharma talks, and guided practice rooted in the early Buddhist teachings.
-        All are welcome — no experience required.
-      </p>
+  <div class="hero-logo-layout">
+    <div class="hero-logo-col">
+      <img src="/images/sit-raleigh-logo.png" alt="Sit Raleigh Meditation Society" class="hero-logo-img" />
     </div>
-    <div class="hero-divider" aria-hidden="true"></div>
-    <div class="hero-right">
+    <div class="hero-content-col">
+      <div class="hero-intro">
+        <p class="hero-eyebrow">{{ settings.tagline }}</p>
+        <h1 class="hero-headline">
+          Still the mind.<br><em>Open</em> the heart.
+        </h1>
+        <p class="hero-sub">
+          Weekly sits, dharma talks, and guided practice rooted in the early Buddhist teachings.
+          All are welcome — no experience required.
+        </p>
+      </div>
       <div class="this-week-card">
         <div class="this-week-label">This week&rsquo;s teaching</div>
         <h2 class="this-week-title">{{ this_week.title }}</h2>
