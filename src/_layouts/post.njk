@@ -1,0 +1,53 @@
+---
+layout: base.njk
+---
+
+<section class="section section--white post-section">
+  <div class="post-layout">
+
+    {# ── Sticky title column ──────────────────────────── #}
+    <aside class="post-aside">
+      <p class="page-eyebrow" style="margin-bottom:12px;">
+        <a href="/blog/" style="color:var(--gold);text-decoration:none;">&larr; All posts</a>
+      </p>
+      <h1 class="post-title">{{ title }}</h1>
+      <p class="post-meta">{{ date | shortDate }}{% if author %} &middot; {{ author }}{% endif %}</p>
+      {% if newsletter_teaching %}
+      <p class="post-continuity">Continuing this week&rsquo;s teaching:<br><em>{{ newsletter_teaching }}</em></p>
+      {% endif %}
+    </aside>
+
+    {# ── Scrolling content column ─────────────────────── #}
+    <div class="post-main">
+      {% if featured_image %}
+      <img src="{{ featured_image }}" alt="{{ title }}" class="post-featured" />
+      {% endif %}
+
+      {% if instagram_url %}
+      <div class="post-instagram">
+        <blockquote class="instagram-media" data-instgrm-permalink="{{ instagram_url }}" data-instgrm-version="14"></blockquote>
+      </div>
+      <script async src="//www.instagram.com/embed.js"></script>
+      {% endif %}
+
+      <div class="rich-text">
+        {{ content | safe }}
+      </div>
+
+      {% if tags %}
+      <div class="post-tags">
+        {% for tag in tags %}
+        {% if tag != "blog" %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <p style="margin-top:2.5rem;">
+        <a href="/blog/" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:0.5px solid var(--gold);padding-bottom:1px;">&larr; Back to all posts</a>
+      </p>
+    </div>
+
+  </div>
+</section>
