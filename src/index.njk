@@ -125,6 +125,31 @@ title: false
 </section>
 {% endif %}
 
+{# ── RECENT BLOG POSTS ─────────────────────────────────── #}
+{% set recentPosts = collections.blog | sortByDate | reverse | limit(2) %}
+{% if recentPosts.length %}
+<section class="section section--parchment" aria-labelledby="blog-heading">
+  <div class="section-inner">
+    <div class="section-label" id="blog-heading">From the blog</div>
+    <div class="blog-grid">
+      {% for post in recentPosts %}
+      <a href="{{ post.url }}" class="blog-card">
+        <div class="blog-card-body">
+          <div class="blog-card-date">{{ post.data.date | shortDate }}</div>
+          <h2 class="blog-card-title">{{ post.data.title }}</h2>
+          {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
+          <span class="blog-card-more">Read &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p style="margin-top:24px">
+      <a href="/blog/" class="btn-outline">All posts &rarr;</a>
+    </p>
+  </div>
+</section>
+{% endif %}
+
 {# ── MAILING LIST ──────────────────────────────────────── #}
 
 {# ── ABOUT + LOCATIONS ─────────────────────────────────── #}

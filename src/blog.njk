@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Blog
+description: Weekly reflections from Sit Raleigh, expanding on each week's teaching, guided by Cary Keishin Brief.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Weekly reflections</p>
+    <div class="blog-hero-row">
+      <h1 class="page-headline">Blog</h1>
+      <img src="/images/sit-raleigh-logo.png" alt="" class="blog-hero-logo" />
+    </div>
+    <p class="page-sub">Each week, we expand on the teaching from our newsletter &mdash; a place to sit with the ideas a little longer.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    {% set posts = collections.blog | sortByDate | reverse %}
+    {% if posts.length %}
+    <div class="blog-grid">
+      {% for post in posts %}
+      <a href="{{ post.url }}" class="blog-card">
+        {% if post.data.featured_image %}
+        <div class="blog-card-img" style="background-image:url('{{ post.data.featured_image }}');"></div>
+        {% endif %}
+        <div class="blog-card-body">
+          <div class="blog-card-date">{{ post.data.date | shortDate }}{% if post.data.author %} &middot; {{ post.data.author }}{% endif %}</div>
+          <h2 class="blog-card-title">{{ post.data.title }}</h2>
+          {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
+          <span class="blog-card-more">Read &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align:center;color:var(--umber-lt);">No posts yet &mdash; check back soon.</p>
+    {% endif %}
+  </div>
+</section>
