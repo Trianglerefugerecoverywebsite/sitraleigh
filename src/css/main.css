@@ -41,7 +41,7 @@ body {
   background: var(--parchment);
   color: var(--umber);
   line-height: 1.7;
-  font-size: 16px;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -209,7 +209,7 @@ body {
   color: var(--gold);
 }
 .hero-sub {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   color: var(--umber-lt);
   margin-top: 20px;
@@ -242,7 +242,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--gold-lt);
 }
 .this-week-meta span {
@@ -258,7 +258,7 @@ body {
   stroke: var(--gold);
 }
 .this-week-desc {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--umber-lt);
   margin-top: 14px;
@@ -447,7 +447,7 @@ body {
 }
 .teaching-info { flex: 1; min-width: 0; }
 .teaching-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--umber-mid);
   line-height: 1.4;
@@ -479,7 +479,7 @@ body {
   margin-bottom: 16px;
 }
 .about-body {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
   color: var(--gold-lt);
 }
@@ -617,7 +617,7 @@ body {
   line-height: 1.15;
 }
 .page-sub {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--umber-lt);
   margin-top: 14px;
   max-width: 520px;
