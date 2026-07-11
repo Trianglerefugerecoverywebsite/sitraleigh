@@ -87,6 +87,13 @@ body {
   text-decoration: none;
 }
 .nav-logo span { color: var(--gold); }
+.nav-logo { display: inline-flex; align-items: center; }
+/* Small logo in the header on every page — adjust height to taste */
+.nav-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
 
 .nav-links {
   display: flex;
@@ -133,6 +140,22 @@ body {
   flex: 1;
   height: 0.5px;
   background: rgba(122, 96, 48, 0.25);
+}
+
+/* ── Home logo banner ────────────────────────────────────────── */
+.home-logo-hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.75rem) var(--pad) 0;
+}
+.home-logo {
+  height: 66vh;        /* ← ~2/3 of the landing view; change this one number to resize */
+  max-height: 620px;
+  width: auto;
+  display: block;      /* left-aligned within the container */
+}
+@media (max-width: 768px) {
+  .home-logo { height: auto; width: min(72%, 320px); margin: 0 auto; }
 }
 
 /* ── Hero ────────────────────────────────────────────────────── */
