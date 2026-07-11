@@ -146,10 +146,11 @@ body {
 .hero-logo-layout {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) var(--pad);
+  padding: clamp(1rem, 2.5vw, 1.75rem) var(--pad);
+  min-height: calc(100svh - 100px);   /* fill the first screen below the nav */
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
   align-items: center;
 }
 .hero-logo-col {
@@ -158,8 +159,10 @@ body {
 }
 .hero-logo-img {
   width: 100%;
-  max-width: 440px;   /* ← logo size on the left; raise/lower to taste */
+  max-width: 400px;   /* ← logo size on the left; raise/lower to taste */
+  max-height: calc(100svh - 170px);   /* keeps the whole rhino on screen */
   height: auto;
+  object-fit: contain;
 }
 .hero-content-col {
   display: flex;
@@ -199,7 +202,7 @@ body {
 }
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(45px, 6vw, 72px);
+  font-size: clamp(40px, 5.2vw, 62px);
   font-weight: 300;
   line-height: 1.1;
   color: var(--umber);
@@ -221,7 +224,7 @@ body {
   background: var(--white);
   border: 0.5px solid rgba(122, 96, 48, 0.2);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 24px;
 }
 .this-week-label {
   font-size: 10px;
