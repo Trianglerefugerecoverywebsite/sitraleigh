@@ -15,6 +15,13 @@
       "format": "Outdoor",
       "notes": "Meet at the small building near the smokestack. Bring a cushion. Cancelled during storms.",
       "link": ""
+    },
+    {
+      "format": "Online (Zoom)",
+      "day": "Sunday",
+      "time": "12 Noon",
+      "location": "Zoom",
+      "notes": "Sunday Meeting"
     }
   ]
 }
