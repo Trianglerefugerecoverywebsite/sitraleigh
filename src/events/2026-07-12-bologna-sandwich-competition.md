@@ -1,6 +1,6 @@
 ---
 title: "Bologna Sandwich Competition "
-date: 2026-07-17
+date: 2026-07-13
 time: Joey Chestnut Smashes the Sandwiches
 location_name: Sandwich Shop
 location_address: 510 Trail of Merlin Garner NC 27529
