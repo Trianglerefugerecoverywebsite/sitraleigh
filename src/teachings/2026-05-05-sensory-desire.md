@@ -29,7 +29,7 @@ description: >-
 
   "These are the five facts that one should reflect on often, whether one is a woman or a man, lay or ordained."
 media_url: https://insighttimer.com/caryjbrief/guided-meditations/the-buddhas-five-daily-reflections?utm_source=copy_link&utm_medium=live_stream_share&_height=982&_width=1512&_branch_match_id=1604573694048667868&utm_campaign=web-share&_branch_referrer=H4sIAAAAAAAAAxXLsQrCMBAA0L%2FJaGhBsEIQB1dBioMuR9pec4dNUi4Xi4vfLr79kepajtZyKhx2pPZ8f3TXJ6bbZThVjRBx4hrdwm%2BEooI%2BQiEvaGDjSck1%2B6Y1QMiB1HWH1vxTyVVGdGNeP7Bwepmv4IwinAIMkreC4no%2Fe%2BEfbKvjAIAAAAA%3D
-media_type: audio
+media_type: video
 tags:
   - Teachings
 ---
