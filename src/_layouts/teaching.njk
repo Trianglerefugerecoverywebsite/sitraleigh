@@ -36,6 +36,9 @@ layout: base.njk
       Your browser does not support video playback.
     </video>
 
+    {% elif media_type == "link" and media_url %}
+    <a href="{{ media_url }}" target="_blank" rel="noopener" class="btn-primary" style="margin-bottom:2rem;">Listen on Insight Timer &rarr;</a>
+
     {% elif media_url %}
     <div style="background:var(--parchment-2);border:0.5px solid rgba(122,96,48,0.2);border-radius:var(--radius-md);padding:24px;margin-bottom:2rem;display:flex;align-items:center;gap:16px;">
       <audio controls style="flex:1;">
