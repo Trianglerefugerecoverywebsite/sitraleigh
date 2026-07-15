@@ -18,6 +18,9 @@ module.exports = function(eleventyConfig) {
     const d = new Date(dateStr + "T00:00:00");
     return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
   });
+  eleventyConfig.addFilter("sortByOrder", (items) => {
+    return [...items].sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  });
   eleventyConfig.addFilter("sortByDate", (items) => {
     return [...items].sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
   });
