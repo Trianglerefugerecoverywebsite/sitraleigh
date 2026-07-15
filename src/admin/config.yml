@@ -87,8 +87,8 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 48 min" }
       - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Audio / Video URL", name: "media_url", widget: "string", hint: "YouTube, SoundCloud, or direct mp3 link" }
-      - { label: "Media Type", name: "media_type", widget: "select", options: ["audio", "video", "youtube"], default: "audio" }
+      - { label: "Audio / Video URL", name: "media_url", widget: "string", required: false, hint: "Paste the Insight Timer link (or a YouTube / MP3 link). Then pick the matching Media Type below." }
+      - { label: "Media Type", name: "media_type", widget: "select", options: ["link", "youtube", "audio", "video"], default: "link", hint: "Choose 'link' for Insight Timer (opens in a new tab). 'youtube' or 'audio' play on the page." }
       - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, eightfold-path, metta" }
 
   # ─── WRITTEN TEACHINGS ──────────────────────────────────────────────────────
