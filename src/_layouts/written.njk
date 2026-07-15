@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">
+      <a href="/teachings/#written" style="color:var(--gold);text-decoration:none;">&larr; All teachings</a>
+    </p>
+    <h1 class="page-headline">{{ title }}</h1>
+    {% if summary %}<p class="page-sub">{{ summary }}</p>{% endif %}
+  </div>
+</div>
+
+<section class="section section--white">
+  <div class="section-inner" style="max-width:680px;">
+    <div class="rich-text">
+      {{ content | safe }}
+    </div>
+
+    <p style="margin-top:2.5rem;">
+      <a href="/teachings/#written" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:0.5px solid var(--gold);padding-bottom:1px;">&larr; Back to teachings</a>
+    </p>
+  </div>
+</section>

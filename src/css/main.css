@@ -659,6 +659,48 @@ body {
   color: var(--umber-mid);
 }
 
+/* ── Written teachings ───────────────────────────────────────── */
+.written-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.written-card {
+  background: var(--white);
+  border: 0.5px solid rgba(122, 96, 48, 0.18);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.written-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.written-card-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--umber);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.written-card-summary {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--umber-lt);
+  margin-bottom: 16px;
+  flex: 1;
+}
+.written-card-more {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 0.5px solid var(--gold);
+  padding-bottom: 1px;
+  align-self: flex-start;
+}
+
 /* ── Blog ────────────────────────────────────────────────────── */
 .blog-hero-row {
   display: flex;

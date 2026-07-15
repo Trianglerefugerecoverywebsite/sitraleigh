@@ -91,6 +91,22 @@ collections:
       - { label: "Media Type", name: "media_type", widget: "select", options: ["audio", "video", "youtube"], default: "audio" }
       - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, eightfold-path, metta" }
 
+  # ─── WRITTEN TEACHINGS ──────────────────────────────────────────────────────
+  - name: "written"
+    label: "Written Teachings"
+    label_singular: "Written Teaching"
+    folder: "src/written"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1, hint: "Controls the order on the Teachings page (1 = first)." }
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the teaching card." }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching. You can add links (like Insight Timer meditations) right in the text." }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
   # ─── WEEKLY BLOG ────────────────────────────────────────────────────────────
   - name: "blog"
     label: "Weekly Blog"

@@ -1,21 +1,41 @@
 ---
 layout: base.njk
-title: Recorded Teachings
-description: Recorded dharma talks and guided meditations from Sit Raleigh, guided by Cary Keishin Brief.
+title: Teachings
+description: Written teachings, recorded dharma talks, and guided meditations from Sit Raleigh, guided by Cary Keishin Brief.
 ---
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-eyebrow">Dharma talks &amp; guided sits</p>
-    <h1 class="page-headline">Recorded Teachings</h1>
-    <p class="page-sub">Audio and video recordings from our weekly sessions. Listen at your own pace, revisit what resonates.</p>
+    <p class="page-eyebrow">Study &amp; practice</p>
+    <h1 class="page-headline">Teachings</h1>
+    <p class="page-sub">Foundational teachings to read and return to, alongside recorded talks and guided meditations to practice with.</p>
   </div>
 </div>
 
-<section class="section section--parchment">
+{# ── WRITTEN TEACHINGS ─────────────────────────────────── #}
+<section id="written" class="section section--white" aria-labelledby="written-heading">
   <div class="section-inner">
+    <div class="section-label" id="written-heading">Written Teachings</div>
+    <div class="written-grid">
+      {% for t in collections.written | sortByOrder %}
+      <a href="{{ t.url }}" class="written-card">
+        <h2 class="written-card-title">{{ t.data.title }}</h2>
+        {% if t.data.summary %}<p class="written-card-summary">{{ t.data.summary }}</p>{% endif %}
+        <span class="written-card-more">Read &rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── RECORDED TALKS & MEDITATIONS ──────────────────────── #}
+<section id="recorded" class="section section--parchment" aria-labelledby="recorded-heading">
+  <div class="section-inner">
+    <div class="section-label" id="recorded-heading">Recorded Talks &amp; Meditations</div>
+    {% set talks = collections.teachings | sortByDate | reverse %}
+    {% if talks.length %}
     <div class="teachings-grid">
-      {% for teaching in collections.teachings | sortByDate | reverse %}
+      {% for teaching in talks %}
       <a href="{{ teaching.url }}" class="teaching-row">
         <div class="play-btn" aria-hidden="true">
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
@@ -30,5 +50,8 @@ description: Recorded dharma talks and guided meditations from Sit Raleigh, guid
       </a>
       {% endfor %}
     </div>
+    {% else %}
+    <p style="color:var(--umber-lt);">Recordings coming soon.</p>
+    {% endif %}
   </div>
 </section>
