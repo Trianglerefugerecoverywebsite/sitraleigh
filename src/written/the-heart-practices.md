@@ -1,8 +1,13 @@
 ---
-title: "The Heart Practices"
+title: The Heart Practices
 order: 3
-summary: "The four qualities of heart and mind — kindness, compassion, appreciative joy, and equanimity — with guided meditations for each."
-tags: [written, foundations, heart-practices]
+summary: The four qualities of heart and mind — kindness, compassion,
+  appreciative joy, and equanimity — with guided meditations for each.
+featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_23_17-pm.png
+tags:
+  - written
+  - foundations
+  - heart-practices
 ---
 
 These four qualities of heart and mind were taught by the Buddha. They are known by many different names — *Brahmavihara* or "abode of Brahma," the Divine Abodes, and the Four Immeasurables. They are described in this way because, through the practice of developing these mind states in meditation, our mind and heart opens — the experience described as immeasurable.
