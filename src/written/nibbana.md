@@ -1,8 +1,12 @@
 ---
-title: "Nibbana — Extinguishing Suffering"
+title: Nibbana — Extinguishing Suffering
 order: 7
-summary: "Some thoughts, from a December talk, on whether the end of suffering is possible and how the letting go actually unfolds."
-tags: [written, foundations]
+summary: Some thoughts, from a December talk, on whether the end of suffering is
+  possible and how the letting go actually unfolds.
+featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_37_19-pm.png
+tags:
+  - written
+  - foundations
 ---
 
 *Some thoughts from the December talk.*
