@@ -3,7 +3,7 @@ title: The Heart Practices
 order: 3
 summary: The four qualities of heart and mind — kindness, compassion,
   appreciative joy, and equanimity — with guided meditations for each.
-featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_23_17-pm.png
+featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_28_50-pm.png
 tags:
   - written
   - foundations
