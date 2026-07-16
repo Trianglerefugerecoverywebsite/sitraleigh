@@ -18,6 +18,10 @@ layout: base.njk
 <section class="section section--white">
   <div class="section-inner" style="max-width:680px;">
 
+    {% if featured_image %}
+    <img src="{{ featured_image }}" alt="{{ title }}" class="post-featured" />
+    {% endif %}
+
     {# ── Media player ───────────────────────────────────── #}
     {% if media_type == "youtube" %}
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-md);margin-bottom:2rem;">
