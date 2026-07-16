@@ -1,8 +1,12 @@
 ---
-title: "The Twelve Links of Dependent Origination"
+title: The Twelve Links of Dependent Origination
 order: 6
-summary: "The Buddha's teaching on how suffering arises and continues through twelve connected links — and how understanding them can free us."
-tags: [written, foundations]
+summary: The Buddha's teaching on how suffering arises and continues through
+  twelve connected links — and how understanding them can free us.
+featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_37_11-pm.png
+tags:
+  - written
+  - foundations
 ---
 
 The Twelve Links of Dependent Origination were described by the Buddha in SN 12.1 (the *Samyutta Nikaya*). In his description of dependent origination, he explains how suffering arises and continues. As stated clearly in the title, there are twelve links or chains that form a connected circle.
