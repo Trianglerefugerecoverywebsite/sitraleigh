@@ -1,8 +1,12 @@
 ---
-title: "The Noble Eightfold Path"
+title: The Noble Eightfold Path
 order: 2
-summary: "The path the Buddha discovered that leads to the end of suffering, often pictured as an eight-spoked wheel."
-tags: [written, foundations]
+summary: The path the Buddha discovered that leads to the end of suffering,
+  often pictured as an eight-spoked wheel.
+featured_image: /images/uploads/screenshot-2026-07-16-at-5.16.53 pm.png
+tags:
+  - written
+  - foundations
 ---
 
 The Buddha discovered this path that leads to the end of suffering. Luckily for the world, he decided to teach what he had found. With the generosity and kindness of millions of individuals throughout history, we still have access to these beautiful teachings today.
