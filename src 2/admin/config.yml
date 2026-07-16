@@ -1,0 +1,270 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+
+  # ─── THIS WEEK'S TEACHING (single, always-visible banner) ───────────────────
+  - name: "this_week"
+    label: "This Week's Teaching"
+    files:
+      - label: "This Week's Teaching"
+        name: "this_week"
+        file: "src/_data/this_week.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string", hint: "e.g. The Five Hindrances: Ill Will (Vyāpāda)" }
+          - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+          - { label: "Time", name: "time", widget: "string", hint: "e.g. 7:00 – 8:00 PM" }
+          - { label: "Location Name", name: "location_name", widget: "string", hint: "e.g. GreenDoor Vitality" }
+          - { label: "Location Address", name: "location_address", widget: "string", hint: "e.g. 704 Glenwood Ave, Raleigh NC" }
+          - { label: "Description", name: "description", widget: "text", hint: "A few sentences about what you'll explore this week." }
+          - { label: "Dana / Fee Note", name: "dana_note", widget: "string", required: false, hint: "e.g. Dana (suggested $10) · All welcome" }
+          - { label: "Registration Link", name: "registration_link", widget: "string", required: false, hint: "Eventbrite, Zoom, etc. — leave blank if no link needed" }
+
+  # ─── WEEKLY SCHEDULE ────────────────────────────────────────────────────────
+  - name: "schedule"
+    label: "Weekly Schedule"
+    files:
+      - label: "Weekly Schedule"
+        name: "schedule"
+        file: "src/_data/schedule.json"
+        fields:
+          - name: "sits"
+            label: "Sits"
+            widget: "list"
+            fields:
+              - { label: "Day", name: "day", widget: "string", hint: "e.g. Tuesday" }
+              - { label: "Time", name: "time", widget: "string", hint: "e.g. 7:00 PM" }
+              - { label: "Location", name: "location", widget: "string", hint: "e.g. GreenDoor Vitality" }
+              - { label: "Format", name: "format", widget: "select", options: ["In-person", "Online (Zoom)", "Outdoor"], default: "In-person" }
+              - { label: "Notes", name: "notes", widget: "string", required: false }
+              - { label: "Zoom / Map Link", name: "link", widget: "string", required: false }
+
+  # ─── EVENTS & RETREATS ──────────────────────────────────────────────────────
+  - name: "events"
+    label: "Events & Retreats"
+    folder: "src/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Time", name: "time", widget: "string", hint: "e.g. 10:00 AM – 12:00 PM" }
+      - { label: "Location Name", name: "location_name", widget: "string" }
+      - { label: "Location Address", name: "location_address", widget: "string", required: false }
+      - { label: "Google Maps Link", name: "map_link", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Registration Link", name: "registration_link", widget: "string", required: false, hint: "Eventbrite, Zoom, PayPal, etc." }
+      - { label: "Registration Button Text", name: "registration_label", widget: "string", required: false, default: "Register →", hint: "e.g. Sign up on Eventbrite" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false, hint: "Show on homepage" }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "e.g. retreat, daylong, outdoor" }
+      - label: "Eventbrite"
+        name: "eventbrite"
+        widget: "object"
+        required: false
+        collapsed: true
+        hint: "Paste the Eventbrite event URL — the site will show a ticket button and optional embedded checkout"
+        fields:
+          - { label: "Eventbrite Event URL", name: "url", widget: "string", required: false, hint: "e.g. https://www.eventbrite.com/e/meditation-tickets-1987687397513" }
+          - { label: "Eventbrite Event ID", name: "event_id", widget: "string", required: false, hint: "The number at the end of the URL — e.g. 1987687397513" }
+          - { label: "Button Label", name: "button_label", widget: "string", required: false, default: "Get tickets on Eventbrite u2192" }
+          - { label: "Embed checkout on this page?", name: "embed", widget: "boolean", default: true, hint: "Shows the Eventbrite ticket selector directly on the event page." }
+
+  # ─── RECORDED TEACHINGS ─────────────────────────────────────────────────────
+  - name: "teachings"
+    label: "Recorded Teachings"
+    folder: "src/teachings"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 48 min" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Audio / Video URL", name: "media_url", widget: "string", required: false, hint: "Paste the Insight Timer link (or a YouTube / MP3 link). Then pick the matching Media Type below." }
+      - { label: "Media Type", name: "media_type", widget: "select", options: ["link", "youtube", "audio", "video"], default: "link", hint: "Choose 'link' for Insight Timer (opens in a new tab). 'youtube' or 'audio' play on the page." }
+      - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, eightfold-path, metta" }
+
+  # ─── SHOP / MERCH ───────────────────────────────────────────────────────────
+  - name: "shop"
+    label: "Shop"
+    label_singular: "Product"
+    folder: "src/shop"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1, hint: "Controls order on the Shop page (1 = first)." }
+      - { label: "Price", name: "price", widget: "string", required: false, hint: "e.g. $16 — set by TeePublic; update if it changes." }
+      - { label: "Product image", name: "image", widget: "string", required: false, hint: "Paste the TeePublic image link, or upload your own image and paste its path." }
+      - { label: "Buy link (TeePublic)", name: "buy_url", widget: "string", hint: "The full TeePublic product link — opens in a new tab." }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+  # ─── WRITTEN TEACHINGS ──────────────────────────────────────────────────────
+  - name: "written"
+    label: "Written Teachings"
+    label_singular: "Written Teaching"
+    folder: "src/written"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1, hint: "Controls the order on the Teachings page (1 = first)." }
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the teaching card." }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching. You can add links (like Insight Timer meditations) right in the text." }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  # ─── WEEKLY BLOG ────────────────────────────────────────────────────────────
+  - name: "blog"
+    label: "Weekly Blog"
+    label_singular: "Blog Post"
+    folder: "src/blog"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Author", name: "author", widget: "string", default: "Cary Keishin Brief" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the blog list and previews." }
+      - { label: "Continuing this week's teaching", name: "newsletter_teaching", widget: "string", required: false, hint: "The newsletter teaching this post expands on, e.g. The Five Hindrances: Ill Will (Vyāpāda). Leave blank if none." }
+      - { label: "Instagram video URL", name: "instagram_url", widget: "string", required: false, hint: "Paste the Instagram post or reel link for the weekly ~1 min talk. Leave blank if none." }
+      - { label: "Featured image", name: "featured_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching — write freely. Headings, quotes, and links all work." }
+      - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, metta, mindfulness" }
+
+  # ─── SITE PAGES (rich text) ─────────────────────────────────────────────────
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Nav Label", name: "nav_label", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ─── ABOUT / TEACHER BIO ────────────────────────────────────────────────────
+  - name: "about"
+    label: "About"
+    files:
+      - label: "Teacher Bio"
+        name: "about"
+        file: "src/_data/about.json"
+        fields:
+          - { label: "Teacher Name", name: "teacher_name", widget: "string", default: "Cary Keishin Brief" }
+          - { label: "Pull Quote", name: "pull_quote", widget: "string", hint: "Short memorable phrase shown on the homepage" }
+          - { label: "Short Bio (homepage)", name: "bio_short", widget: "text" }
+          - { label: "Full Bio", name: "bio_full", widget: "markdown" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Tradition / Lineage", name: "tradition", widget: "string", default: "Theravāda" }
+
+  # ─── LOCATIONS ──────────────────────────────────────────────────────────────
+  - name: "locations"
+    label: "Practice Locations"
+    files:
+      - label: "Locations"
+        name: "locations"
+        file: "src/_data/locations.json"
+        fields:
+          - name: "places"
+            label: "Places"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Google Maps Embed URL", name: "map_embed", widget: "string", required: false, hint: "Paste the embed src from Google Maps → Share → Embed" }
+              - { label: "Google Maps Link", name: "map_link", widget: "string", required: false }
+              - { label: "Parking Notes", name: "parking", widget: "string", required: false }
+              - { label: "Notes", name: "notes", widget: "string", required: false }
+
+  # ─── SITE SETTINGS ──────────────────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Global Settings"
+        name: "settings"
+        file: "src/_data/settings.json"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "Sit Raleigh" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+          - { label: "Google Analytics ID", name: "ga_id", widget: "string", required: false }
+          - { label: "Announcement Banner", name: "announcement", widget: "string", required: false, hint: "Optional — shows a banner across the top of every page" }
+          - { label: "Show Announcement", name: "show_announcement", widget: "boolean", default: false }
+
+  # ─── PĀLI GLOSSARY ──────────────────────────────────────────────────────────
+  - name: "glossary"
+    label: "Pāli Glossary"
+    files:
+      - label: "Glossary Terms"
+        name: "glossary"
+        file: "src/_data/glossary.json"
+        fields:
+          - name: "terms"
+            label: "Terms"
+            widget: "list"
+            summary: "{{fields.term}} — {{fields.translation}}"
+            fields:
+              - { label: "Pāli Term", name: "term", widget: "string", hint: "e.g. Mettā" }
+              - { label: "Pronunciation", name: "pronunciation", widget: "string", required: false, hint: "e.g. MET-tah" }
+              - { label: "English Translation", name: "translation", widget: "string", hint: "e.g. Loving-kindness; goodwill" }
+              - { label: "Definition", name: "definition", widget: "text" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Core Concepts"
+                  - "Three Marks"
+                  - "The Three Trainings"
+                  - "Five Hindrances"
+                  - "Four Brahmavihāras"
+                  - "Noble Eightfold Path"
+                  - "Meditation"
+                  - "Other"
+
+  # ─── MAILING LIST SETTINGS ──────────────────────────────────────────────────
+  - name: "mailing_list"
+    label: "Mailing List"
+    files:
+      - label: "Mailing List Settings"
+        name: "mailing_list"
+        file: "src/_data/mailing_list.json"
+        fields:
+          - { label: "Enable Signup Section", name: "enabled", widget: "boolean", default: true }
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Stay in the flow" }
+          - { label: "Subheading", name: "subheading", widget: "string" }
+          - { label: "Button Label", name: "button_label", widget: "string", default: "Subscribe" }
+          - { label: "Email Placeholder", name: "placeholder", widget: "string", default: "your@email.com" }
+          - { label: "Fine Print", name: "fine_print", widget: "string", default: "No spam, ever. Unsubscribe anytime." }
+          - label: "Provider"
+            name: "provider"
+            widget: "select"
+            options: ["mailchimp", "convertkit", "none"]
+            default: "none"
+            hint: "Choose your email provider — then paste the form action URL below"
+          - { label: "Form Action URL", name: "form_action", widget: "string", required: false, hint: "From Mailchimp or ConvertKit embed code — the 'action' attribute of the form tag" }
+
+  # ─── EVENTBRITE SETTINGS ────────────────────────────────────────────────────
+  - name: "eventbrite_settings"
+    label: "Eventbrite Settings"
+    files:
+      - label: "Eventbrite Configuration"
+        name: "eventbrite_settings"
+        file: "src/_data/eventbrite_settings.json"
+        fields:
+          - { label: "Organizer Profile URL", name: "organizer_url", widget: "string", required: false, hint: "Your Eventbrite organizer page — e.g. https://www.eventbrite.com/o/your-name-12345" }
+          - { label: "Show 'All Events on Eventbrite' link", name: "show_all_link", widget: "boolean", default: true }
+          - { label: "Default Button Label", name: "default_button_label", widget: "string", default: "Get tickets on Eventbrite →" }
+          - { label: "Embed checkout by default?", name: "embed_by_default", widget: "boolean", default: true, hint: "Individual events can override this setting" }
