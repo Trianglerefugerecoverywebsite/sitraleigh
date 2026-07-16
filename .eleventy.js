@@ -45,6 +45,9 @@ module.exports = function(eleventyConfig) {
     return items.filter(item => parseDate(item.data.date) >= today);
   });
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("whereType", (items, type) => {
+    return items.filter(i => (i.data.type || "Event") === type);
+  });
   eleventyConfig.addFilter("unique", (arr) => [...new Set(arr)]);
   eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
   eleventyConfig.addFilter("nl2br", (str) => str ? str.replace(/\n/g, "<br>") : "");
