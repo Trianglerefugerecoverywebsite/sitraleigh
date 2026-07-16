@@ -814,6 +814,65 @@ body {
   border-radius: 20px;
 }
 
+/* ── Shop ────────────────────────────────────────────────────── */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.shop-card {
+  background: var(--white);
+  border: 0.5px solid rgba(122, 96, 48, 0.18);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.shop-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.shop-card-img {
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--parchment-2);
+}
+.shop-card-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+.shop-card-title {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 400;
+  color: var(--umber);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.shop-card-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--umber-lt);
+  margin-bottom: 18px;
+  flex: 1;
+}
+.shop-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.shop-card-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--umber);
+}
+.shop-card-btn {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 0.5px solid var(--gold);
+  padding-bottom: 1px;
+}
+
 /* ── Footer ──────────────────────────────────────────────────── */
 .site-footer {
   background: var(--ink-dark);

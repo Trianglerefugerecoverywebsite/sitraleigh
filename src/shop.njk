@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Shop
+description: Sit Raleigh merchandise — featuring our meditating rhino. Proceeds support the community.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Merch</p>
+    <h1 class="page-headline">Shop</h1>
+    <p class="page-sub">Wear the rhino. Every purchase helps support Sit Raleigh&rsquo;s offerings, which are given freely by dana.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    {% set products = collections.shop | sortByOrder %}
+    {% if products.length %}
+    <div class="shop-grid">
+      {% for product in products %}
+      <a href="{{ product.data.buy_url }}" target="_blank" rel="noopener" class="shop-card">
+        {% if product.data.image %}
+        <div class="shop-card-img" style="background-image:url('{{ product.data.image }}');"></div>
+        {% endif %}
+        <div class="shop-card-body">
+          <h2 class="shop-card-title">{{ product.data.title }}</h2>
+          {% if product.data.description %}<p class="shop-card-desc">{{ product.data.description }}</p>{% endif %}
+          <div class="shop-card-foot">
+            {% if product.data.price %}<span class="shop-card-price">{{ product.data.price }}</span>{% endif %}
+            <span class="shop-card-btn">Shop on TeePublic &rarr;</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p style="margin-top:24px;font-size:14px;color:var(--umber-lt);">Prices and availability are set by TeePublic and may vary with their promotions.</p>
+    {% else %}
+    <p style="text-align:center;color:var(--umber-lt);">Merch coming soon.</p>
+    {% endif %}
+  </div>
+</section>
