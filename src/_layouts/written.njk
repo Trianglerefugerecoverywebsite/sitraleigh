@@ -14,6 +14,9 @@ layout: base.njk
 
 <section class="section section--white">
   <div class="section-inner" style="max-width:680px;">
+    {% if featured_image %}
+    <img src="{{ featured_image }}" alt="{{ title }}" class="post-featured" />
+    {% endif %}
     <div class="rich-text">
       {{ content | safe }}
     </div>
