@@ -1,5 +1,5 @@
 ---
-title: "THE NOBLE EIGHTFOLD PATH "
+title: The Noble Eight Fold Path
 order: 1
 summary: >-
   The Buddha discovered this path that leads to the end of suffering.  Luckily
