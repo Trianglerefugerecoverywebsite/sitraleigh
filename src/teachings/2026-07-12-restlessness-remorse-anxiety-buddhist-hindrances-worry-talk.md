@@ -10,5 +10,5 @@ description: This is a talk given at our weekly Sit Raleigh Meditation Society
   us out of control at times.  Learning what the hindrance encompasses and how
   to meet it with skill will support us in developing a peaceful mind.
 media_url: https://insighttimer.com/caryjbrief/guided-meditations/restlessness-remorse-anxiety-buddhist-hindrances-worry-talk
-media_type: audio
+media_type: link
 ---
