@@ -1,8 +1,12 @@
 ---
-title: "The Five Daily Reflections"
+title: The Five Daily Reflections
 order: 4
-summary: "Five facts the Buddha said we should reflect on often — aging, illness, death, separation, and karma."
-tags: [written, foundations]
+summary: Five facts the Buddha said we should reflect on often — aging, illness,
+  death, separation, and karma.
+featured_image: /images/uploads/screenshot-2026-07-16-at-5.17.43 pm.png
+tags:
+  - written
+  - foundations
 ---
 
 An easy way to remember these is to use these five words: **Aging, Illness, Death, Separation, Karma.**
