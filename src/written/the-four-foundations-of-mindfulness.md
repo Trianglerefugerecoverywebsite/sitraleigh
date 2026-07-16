@@ -1,8 +1,12 @@
 ---
-title: "The Four Foundations of Mindfulness"
+title: The Four Foundations of Mindfulness
 order: 5
-summary: "The Satipatthana — the Buddha's most complete teaching on mindfulness, training us in body, feeling, mind, and the truth of experience."
-tags: [written, foundations]
+summary: The Satipatthana — the Buddha's most complete teaching on mindfulness,
+  training us in body, feeling, mind, and the truth of experience.
+featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_26_16-pm.png
+tags:
+  - written
+  - foundations
 ---
 
 *Satipatthana*
