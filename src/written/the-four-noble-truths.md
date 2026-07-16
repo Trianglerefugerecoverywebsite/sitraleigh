@@ -1,8 +1,12 @@
 ---
-title: "The Four Noble Truths"
+title: The Four Noble Truths
 order: 1
-summary: "The foundation of the Buddha's teaching — that dissatisfaction exists, has a cause, has an ending, and that there is a path to that ending."
-tags: [written, foundations]
+summary: The foundation of the Buddha's teaching — that dissatisfaction exists,
+  has a cause, has an ending, and that there is a path to that ending.
+featured_image: /images/uploads/screenshot-2026-07-16-at-5.15.18 pm.png
+tags:
+  - written
+  - foundations
 ---
 
 About 2,600 years ago in Northern India, a man named Siddhartha Gotama, who became the Buddha, discovered the Four Noble Truths. According to what we understand, after being somewhat shocked when coming in contact with what we now call the Four Messengers — Old Age, Illness, and Death, and then seeing a homeless spiritual seeker or mendicant — Siddhartha had a realization that his sheltered life as a Prince would no longer do. In my understanding he had some sort of an existential crisis and left his home seeking answers.
