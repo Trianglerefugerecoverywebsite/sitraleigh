@@ -964,3 +964,121 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* â”€â”€ Schedule item pop-up (details & directions) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.schedule-card--clickable {
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.schedule-card--clickable:hover,
+.schedule-card--clickable:focus-visible {
+  box-shadow: 0 6px 20px rgba(42, 29, 6, 0.12);
+  transform: translateY(-2px);
+}
+.schedule-card--clickable:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.schedule-card-more {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 14px;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 18, 8, 0.55);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pad);
+}
+.modal-overlay.is-open {
+  display: flex;
+}
+.modal-panel {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  max-width: 460px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(28, 18, 8, 0.3);
+}
+.modal-panel:focus {
+  outline: none;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--parchment-2);
+  color: var(--umber);
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-close:hover { background: var(--gold-pale); }
+.modal-format-badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.modal-day {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--umber);
+  margin-bottom: 4px;
+  padding-right: 24px;
+}
+.modal-loc {
+  font-size: 15px;
+  color: var(--umber-lt);
+  margin-bottom: 4px;
+}
+.modal-addr {
+  font-size: 13px;
+  color: var(--umber-lt);
+  margin-bottom: 12px;
+}
+.modal-details,
+.modal-notes {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--umber-mid);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 0.5px solid rgba(122, 96, 48, 0.15);
+}
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.modal-actions .btn-primary,
+.modal-actions .btn-outline {
+  margin-top: 0;
+}
