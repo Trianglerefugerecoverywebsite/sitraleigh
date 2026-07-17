@@ -1,26 +1,220 @@
-{
-  "sits": [
-    {
-      "day": "Tuesday",
-      "time": "7:00 – 8:00 PM",
-      "location": "GreenDoor Vitality",
-      "format": "In-person",
-      "notes": "704 Glenwood Ave, Raleigh NC — free parking in rear",
-      "details": "",
-      "address": "",
-      "map_link": "",
-      "link": ""
-    },
-    {
-      "day": "Saturday",
-      "time": "9:25 AM",
-      "location": "NC Museum of Art",
-      "format": "Outdoor",
-      "notes": "Meet at the small building near the smokestack. Bring a cushion. Cancelled during storms.",
-      "details": "",
-      "address": "",
-      "map_link": "",
-      "link": ""
+---
+layout: base.njk
+title: Schedule
+description: Weekly meditation sits with Sit Raleigh — Tuesday evenings and Saturday mornings in Raleigh, NC.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">When &amp; where we sit</p>
+    <h1 class="page-headline">Schedule</h1>
+    <p class="page-sub">All sits are open to everyone — seasoned practitioners and first-timers alike. Arrive a few minutes early to settle in.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    <div class="section-label">Regular sits</div>
+    <div class="schedule-cards">
+      {% for sit in schedule.sits %}
+      <div class="schedule-card schedule-card--clickable"
+           tabindex="0"
+           role="button"
+           aria-haspopup="dialog"
+           aria-controls="sitModalPanel"
+           data-sit-index="{{ loop.index0 }}"
+           onclick="openSitModal({{ loop.index0 }})"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSitModal({{ loop.index0 }});}">
+        {% if sit.format == "Online (Zoom)" %}
+        <div class="format-badge format-badge--online">Online &middot; Zoom</div>
+        {% elif sit.format == "Outdoor" %}
+        <div class="format-badge format-badge--outdoor">Outdoor</div>
+        {% else %}
+        <div class="format-badge format-badge--inperson">In-person</div>
+        {% endif %}
+        <div class="schedule-card-day">{{ sit.day }}</div>
+        <div class="schedule-card-time">{{ sit.time }}</div>
+        <div class="schedule-card-loc">{{ sit.location }}</div>
+        {% if sit.notes %}
+        <div class="schedule-card-notes">{{ sit.notes }}</div>
+        {% endif %}
+        {% if sit.link %}
+        <p style="margin-top:14px">
+          <a href="{{ sit.link }}" class="btn-primary" target="_blank" rel="noopener" onclick="event.stopPropagation()">Join &rarr;</a>
+        </p>
+        {% endif %}
+        <p class="schedule-card-more">Tap for details &amp; directions &rarr;</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% set upcomingEvents = collections.events | sortByDate | futureOnly %}
+{% if upcomingEvents.length %}
+<section class="section section--white">
+  <div class="section-inner">
+    <div class="section-label">Special events &amp; retreats</div>
+    <div class="events-grid">
+      {% for event in upcomingEvents %}
+      {% set md = event.data.date | monthDay %}
+      <a href="{{ event.url }}" class="event-card">
+        <div class="event-month">{{ md.month }}</div>
+        <div class="event-day">{{ md.day }}</div>
+        <div class="event-title">{{ event.data.title }}</div>
+        <div class="event-meta">
+          {% if event.data.time %}{{ event.data.time }}<br>{% endif %}
+          {{ event.data.location_name }}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--dark">
+  <div class="about-map-grid">
+    <div>
+      <div class="section-label">Practice locations</div>
+      <div class="locations-stack">
+        {% for place in locations.places %}
+        <div class="location-card">
+          <div class="location-name">{{ place.name }}</div>
+          <div class="location-addr">{{ place.address }}</div>
+          {% if place.parking %}
+          <div class="location-addr" style="margin-top:4px;">🅿 {{ place.parking }}</div>
+          {% endif %}
+          {% if place.notes %}
+          <div class="location-addr" style="margin-top:4px;font-style:italic;">{{ place.notes }}</div>
+          {% endif %}
+          {% if place.map_link %}
+          <a href="{{ place.map_link }}" class="location-link" target="_blank" rel="noopener">Open in Maps &rarr;</a>
+          {% endif %}
+          {% if place.map_embed %}
+          <div class="map-embed">
+            <iframe src="{{ place.map_embed }}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of {{ place.name }}"></iframe>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Questions?</div>
+      <p class="about-body">Not sure which sit to attend, or have a question before coming for the first time? Feel free to reach out.</p>
+      <p style="margin-top:20px">
+        <a href="/contact/" class="btn-primary">Get in touch &rarr;</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="sitModalOverlay" onclick="closeSitModal()">
+  <div class="modal-panel" id="sitModalPanel" role="dialog" aria-modal="true" aria-labelledby="sitModalTitle" tabindex="-1" onclick="event.stopPropagation()">
+    <button type="button" class="modal-close" onclick="closeSitModal()" aria-label="Close">&times;</button>
+    <div class="modal-format-badge" id="sitModalBadge"></div>
+    <div class="modal-day" id="sitModalDay"></div>
+    <h2 class="modal-title" id="sitModalTitle"></h2>
+    <div class="modal-loc" id="sitModalLoc"></div>
+    <div class="modal-addr" id="sitModalAddr"></div>
+    <p class="modal-details" id="sitModalDetails"></p>
+    <p class="modal-notes" id="sitModalNotes"></p>
+    <div class="modal-actions">
+      <a class="btn-primary" id="sitModalDirections" href="#" target="_blank" rel="noopener">Get Directions &rarr;</a>
+      <a class="btn-outline" id="sitModalJoin" href="#" target="_blank" rel="noopener">Join &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  var SCHEDULE_SITS = {{ schedule.sits | jsonify | safe }};
+  var PRACTICE_LOCATIONS = {{ locations.places | jsonify | safe }};
+  var sitModalLastFocused = null;
+
+  function findPracticeLocation(name) {
+    if (!name) return null;
+    var target = name.trim().toLowerCase();
+    for (var i = 0; i < PRACTICE_LOCATIONS.length; i++) {
+      if ((PRACTICE_LOCATIONS[i].name || "").trim().toLowerCase() === target) {
+        return PRACTICE_LOCATIONS[i];
+      }
     }
-  ]
-}
+    return null;
+  }
+
+  function sitDirectionsUrl(sit, place) {
+    if (sit.map_link) return sit.map_link;
+    if (place && place.map_link) return place.map_link;
+    var addr = sit.address || (place && place.address);
+    if (addr) return "https://maps.google.com/?q=" + encodeURIComponent(addr);
+    return null;
+  }
+
+  function openSitModal(index) {
+    var sit = SCHEDULE_SITS[index];
+    if (!sit) return;
+    var place = findPracticeLocation(sit.location);
+
+    var badgeClass = "format-badge format-badge--inperson";
+    var badgeText = "In-person";
+    if (sit.format === "Online (Zoom)") { badgeClass = "format-badge format-badge--online"; badgeText = "Online · Zoom"; }
+    else if (sit.format === "Outdoor") { badgeClass = "format-badge format-badge--outdoor"; badgeText = "Outdoor"; }
+    var badgeEl = document.getElementById("sitModalBadge");
+    badgeEl.className = badgeClass;
+    badgeEl.textContent = badgeText;
+
+    document.getElementById("sitModalDay").textContent = sit.day + " · " + sit.time;
+    document.getElementById("sitModalTitle").textContent = sit.location;
+    document.getElementById("sitModalLoc").textContent = sit.address || (place ? place.address : "") || "";
+
+    var parkingEl = document.getElementById("sitModalAddr");
+    var parkingText = place && place.parking ? "🅿 " + place.parking : "";
+    parkingEl.textContent = parkingText;
+    parkingEl.style.display = parkingText ? "block" : "none";
+
+    var detailsEl = document.getElementById("sitModalDetails");
+    detailsEl.textContent = sit.details || "";
+    detailsEl.style.display = sit.details ? "block" : "none";
+
+    var notesEl = document.getElementById("sitModalNotes");
+    notesEl.textContent = sit.notes || "";
+    notesEl.style.display = sit.notes ? "block" : "none";
+
+    var dirBtn = document.getElementById("sitModalDirections");
+    var url = sitDirectionsUrl(sit, place);
+    if (url) {
+      dirBtn.href = url;
+      dirBtn.style.display = "inline-block";
+    } else {
+      dirBtn.style.display = "none";
+    }
+
+    var joinBtn = document.getElementById("sitModalJoin");
+    if (sit.link) {
+      joinBtn.href = sit.link;
+      joinBtn.textContent = sit.format === "Online (Zoom)" ? "Join on Zoom →" : "Open Link →";
+      joinBtn.style.display = "inline-block";
+    } else {
+      joinBtn.style.display = "none";
+    }
+
+    sitModalLastFocused = document.activeElement;
+    var overlay = document.getElementById("sitModalOverlay");
+    overlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("sitModalPanel").focus();
+    document.addEventListener("keydown", sitModalKeydown);
+  }
+
+  function closeSitModal() {
+    document.getElementById("sitModalOverlay").classList.remove("is-open");
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", sitModalKeydown);
+    if (sitModalLastFocused) sitModalLastFocused.focus();
+  }
+
+  function sitModalKeydown(e) {
+    if (e.key === "Escape") closeSitModal();
+  }
+</script>
