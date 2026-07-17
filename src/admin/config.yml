@@ -110,7 +110,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1, hint: "Controls order on the Shop page (1 = first)." }
       - { label: "Price", name: "price", widget: "string", required: false, hint: "e.g. $16 — set by TeePublic; update if it changes." }
-      - { label: "Product image", name: "image", widget: "string", required: false, hint: "Paste the TeePublic image link, or upload your own image and paste its path." }
+      - { label: "Product image", name: "image", widget: "image", required: false, choose_url: true, hint: "Click 'Choose an image' to upload your own photo — or in that same window, click 'Insert from URL' to paste a picture link (like a TeePublic photo) instead." }
       - { label: "Buy link (TeePublic)", name: "buy_url", widget: "string", hint: "The full TeePublic product link — opens in a new tab." }
       - { label: "Description", name: "description", widget: "text", required: false }
 
