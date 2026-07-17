@@ -37,13 +37,17 @@ collections:
           - name: "sits"
             label: "Sits"
             widget: "list"
+            summary: "{{fields.day}} — {{fields.location}}"
             fields:
               - { label: "Day", name: "day", widget: "string", hint: "e.g. Tuesday" }
               - { label: "Time", name: "time", widget: "string", hint: "e.g. 7:00 PM" }
               - { label: "Location", name: "location", widget: "string", hint: "e.g. GreenDoor Vitality" }
               - { label: "Format", name: "format", widget: "select", options: ["In-person", "Online (Zoom)", "Outdoor"], default: "In-person" }
-              - { label: "Notes", name: "notes", widget: "string", required: false }
-              - { label: "Zoom / Map Link", name: "link", widget: "string", required: false }
+              - { label: "Notes", name: "notes", widget: "string", required: false, hint: "Short note shown right on the schedule card." }
+              - { label: "Details (shown in pop-up)", name: "details", widget: "text", required: false, hint: "Longer info shown when someone taps this sit — what to expect, what to bring, etc." }
+              - { label: "Address override", name: "address", widget: "string", required: false, hint: "Only needed if this location isn't listed under Practice Locations, or to override it." }
+              - { label: "Map Link", name: "map_link", widget: "string", required: false, hint: "Direct Google Maps link for the 'Get Directions' button. Leave blank to auto-use the matching address from Practice Locations." }
+              - { label: "Zoom Link", name: "link", widget: "string", required: false, hint: "For online sits only — shows a 'Join' button. Leave blank for in-person/outdoor sits." }
 
   # ─── EVENTS & RETREATS ──────────────────────────────────────────────────────
   - name: "events"
