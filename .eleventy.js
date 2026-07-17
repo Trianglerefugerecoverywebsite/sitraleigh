@@ -51,6 +51,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("unique", (arr) => [...new Set(arr)]);
   eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
   eleventyConfig.addFilter("nl2br", (str) => str ? str.replace(/\n/g, "<br>") : "");
+  eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
 
   return {
     dir: {
