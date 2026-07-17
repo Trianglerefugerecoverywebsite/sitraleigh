@@ -1,5 +1,6 @@
 ---
 title: Meditation at Dix Park
+type: Event
 date: 2026-07-22
 time: 10:00 AM – 11:00 AM
 location_name: The Chapel at Dix Park
@@ -14,14 +15,15 @@ description: >
 
 
   Please bring a cushion or anything you need for your comfort.
+registration_label: Get Tickets here, it's Free!
 featured: true
 tags:
   - events
   - outdoor
   - dix-park
 eventbrite:
-  url: https://www.eventbrite.com/e/meditation-tickets-1987687397513
-  event_id: "1987687397513"
+  url: https://www.eventbrite.com/e/meditation-tickets-1987687733518?aff=erelexpmlt
+  event_id: ""
   button_label: Get tickets on Eventbrite →
   embed: true
 ---
