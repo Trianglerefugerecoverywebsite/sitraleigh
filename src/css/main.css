@@ -833,7 +833,8 @@ body {
 .shop-card:hover { border-color: var(--gold); transform: translateY(-2px); }
 .shop-card-img {
   aspect-ratio: 1 / 1;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   background-color: var(--parchment-2);
 }
