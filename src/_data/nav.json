@@ -25,7 +25,8 @@
     {
       "label": "Shop",
       "url": "/shop/",
-      "icon": "/images/uploads/shopping-rino.png"
+      "icon": "/images/uploads/shop-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Events",
