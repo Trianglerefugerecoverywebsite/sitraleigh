@@ -32,6 +32,13 @@
         <a href="/" class="nav-logo" aria-label="{{ settings.site_title }} home">
           <img src="/images/sit-raleigh-logo.png" alt="" class="nav-logo-img" />
         </a>
+
+        {% for item in nav.items %}
+        {% if page.url == item.url and item.icon %}
+        <img src="{{ item.icon }}" alt="" class="nav-page-icon">
+        {% endif %}
+        {% endfor %}
+
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('nav-links').classList.toggle('open')">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="3" y1="6" x2="19" y2="6"/>
@@ -43,7 +50,6 @@
           {% for item in nav.items %}
           <li>
             <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
-              {% if item.icon %}<img src="{{ item.icon }}" alt="" class="nav-item-icon">{% endif %}
               {{ item.label }}
             </a>
           </li>
