@@ -110,7 +110,8 @@ collections:
             widget: "list"
             summary: "{{fields.text}}"
             fields:
-              - { label: "Joke", name: "text", widget: "text", hint: "The joke or short story itself — keep it short and sweet." }
+              - { label: "Joke", name: "text", widget: "text", required: false, hint: "The joke or short story itself — keep it short and sweet. Leave blank if this joke is just a picture." }
+              - { label: "Picture", name: "image", widget: "image", required: false, hint: "Optional — add a picture for this joke (a meme, a cartoon, whatever). If there's no text above, the picture alone shows as the joke." }
               - { label: "Source / Credit", name: "source", widget: "string", required: false, hint: "Optional — e.g. 'heard from a student' or where it came from." }
 
   # ─── SHOP / MERCH ───────────────────────────────────────────────────────────
