@@ -1,6 +1,6 @@
 ---
 title: Buddha's Noble Eightfold Path
-date: 2026-06-21
+date: 2025-06-21
 author: Cary Keishin Brief
 summary: Exploration of the Eightfold
 ---
