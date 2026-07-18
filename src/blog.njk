@@ -19,21 +19,58 @@ description: Weekly reflections from Sit Raleigh, expanding on each week's teach
   <div class="section-inner">
     {% set posts = collections.blog | sortByDate | reverse %}
     {% if posts.length %}
-    <div class="blog-grid">
-      {% for post in posts %}
-      <a href="{{ post.url }}" class="blog-card">
-        {% if post.data.featured_image %}
-        <div class="blog-card-img" style="background-image:url('{{ post.data.featured_image }}');"></div>
-        {% endif %}
-        <div class="blog-card-body">
-          <div class="blog-card-date">{{ post.data.date | shortDate }}{% if post.data.author %} &middot; {{ post.data.author }}{% endif %}</div>
-          <h2 class="blog-card-title">{{ post.data.title }}</h2>
-          {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
-          <span class="blog-card-more">Read &rarr;</span>
+    <div class="blog-layout">
+      <aside class="blog-year-filter" aria-label="Filter posts by year">
+        <div class="section-label" style="margin-bottom:14px;">Jump to year</div>
+        <div class="year-filter-list" id="yearFilterList">
+          <button type="button" class="year-filter-btn is-active" data-year="all" aria-pressed="true">
+            All <span class="year-filter-count">{{ posts.length }}</span>
+          </button>
+          {% for yc in posts | yearCounts %}
+          <button type="button" class="year-filter-btn" data-year="{{ yc.year }}" aria-pressed="false">
+            {{ yc.year }} <span class="year-filter-count">{{ yc.count }}</span>
+          </button>
+          {% endfor %}
         </div>
-      </a>
-      {% endfor %}
+      </aside>
+      <div class="blog-grid" id="blogGrid">
+        {% for post in posts %}
+        <a href="{{ post.url }}" class="blog-card" data-year="{{ post.data.date | yearOnly }}">
+          {% if post.data.featured_image %}
+          <div class="blog-card-img" style="background-image:url('{{ post.data.featured_image }}');"></div>
+          {% endif %}
+          <div class="blog-card-body">
+            <div class="blog-card-date">{{ post.data.date | shortDate }}{% if post.data.author %} &middot; {{ post.data.author }}{% endif %}</div>
+            <h2 class="blog-card-title">{{ post.data.title }}</h2>
+            {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
+            <span class="blog-card-more">Read &rarr;</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
     </div>
+
+    <script>
+      (function () {
+        var buttons = document.querySelectorAll("#yearFilterList .year-filter-btn");
+        var cards = document.querySelectorAll("#blogGrid .blog-card");
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            buttons.forEach(function (b) {
+              b.classList.remove("is-active");
+              b.setAttribute("aria-pressed", "false");
+            });
+            btn.classList.add("is-active");
+            btn.setAttribute("aria-pressed", "true");
+            var year = btn.getAttribute("data-year");
+            cards.forEach(function (card) {
+              var show = year === "all" || card.getAttribute("data-year") === year;
+              card.style.display = show ? "" : "none";
+            });
+          });
+        });
+      })();
+    </script>
     {% else %}
     <p style="text-align:center;color:var(--umber-lt);">No posts yet &mdash; check back soon.</p>
     {% endif %}
