@@ -24,7 +24,7 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string", hint: "The text shown in the menu, e.g. Schedule" }
               - { label: "Link", name: "url", widget: "string", hint: "The page this points to, e.g. /schedule/ — must exactly match an existing page, including the slashes on both ends." }
-              - { label: "Icon / Picture", name: "icon", widget: "image", required: false, hint: "Optional small picture shown next to the label. Works best as a simple, roughly-square image." }
+              - { label: "Icon / Picture", name: "icon", widget: "image", required: false, hint: "Optional — shows centered in the nav bar only when a visitor is actually on this page. Works best as a simple, roughly-square image." }
 
   # ─── THIS WEEK'S TEACHING (single, always-visible banner) ───────────────────
   - name: "this_week"
