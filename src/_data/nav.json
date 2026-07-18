@@ -14,27 +14,32 @@
     {
       "label": "Teachings",
       "url": "/teachings/",
-      "icon": "/images/uploads/teaching-rino.png"
+      "icon": "/images/uploads/teach-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Blog",
       "url": "/blog/",
-      "icon": "/images/uploads/blogging-rino.png"
+      "icon": "/images/uploads/blog-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Shop",
       "url": "/shop/",
-      "icon": "/images/uploads/shopping-rino.png"
+      "icon": "/images/uploads/shop-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Events",
       "url": "/events/",
-      "icon": ""
+      "icon": "/images/uploads/schedule-rino.png",
+      "icon_size": 200
     },
     {
       "label": "About",
       "url": "/about/",
-      "icon": ""
+      "icon": "/images/uploads/about-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Glossary",
