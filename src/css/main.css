@@ -1214,3 +1214,42 @@ body {
   .blog-year-filter { position: static; }
   .year-filter-list { flex-direction: row; flex-wrap: wrap; }
 }
+
+/* ── Blog: prayer flag dividers + year sections ───────────────────────────── */
+.year-filter-btn { text-decoration: none; }
+
+.blog-main {
+  display: flex;
+  flex-direction: column;
+}
+.blog-year-heading {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 400;
+  color: var(--umber);
+  margin-bottom: 20px;
+}
+.blog-year-group + .blog-flag-divider {
+  margin-top: 40px;
+}
+.blog-flag-divider {
+  background: var(--umber);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 0;
+  margin-bottom: 40px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.blog-flag-img {
+  height: 120px;
+  width: auto;
+  max-width: 92%;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 640px) {
+  .blog-flag-img { height: 80px; }
+  .blog-flag-divider { padding: 16px 0; }
+}
