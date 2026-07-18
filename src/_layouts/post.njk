@@ -31,8 +31,24 @@ layout: base.njk
       {% endif %}
 
       <div class="rich-text">
-        {{ content | safe }}
+        {{ content | inlineThumbs | safe }}
       </div>
+
+      {% if gallery and gallery.length %}
+      <div class="post-gallery">
+        {% for item in gallery %}
+        {% if item.image %}
+        <img src="{{ item.image }}"
+             alt="{{ item.caption | default(title, true) }}"
+             class="gallery-thumb"
+             tabindex="0"
+             role="button"
+             aria-haspopup="dialog"
+             loading="lazy">
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
 
       {% if tags %}
       <div class="post-tags">
@@ -51,3 +67,57 @@ layout: base.njk
 
   </div>
 </section>
+
+<div class="modal-overlay image-lightbox-overlay" id="imageLightboxOverlay" onclick="closeImageLightbox()">
+  <div class="image-lightbox-panel" onclick="event.stopPropagation()">
+    <button type="button" class="modal-close" id="imageLightboxClose" onclick="closeImageLightbox()" aria-label="Close">&times;</button>
+    <img id="imageLightboxImg" src="" alt="" class="image-lightbox-img">
+    <p id="imageLightboxCaption" class="image-lightbox-caption"></p>
+  </div>
+</div>
+
+<script>
+  var imageLightboxLastFocused = null;
+
+  function openImageLightbox(src, caption) {
+    if (!src) return;
+    imageLightboxLastFocused = document.activeElement;
+    document.getElementById("imageLightboxImg").src = src;
+    document.getElementById("imageLightboxImg").alt = caption || "";
+    var capEl = document.getElementById("imageLightboxCaption");
+    capEl.textContent = caption || "";
+    capEl.style.display = caption ? "block" : "none";
+    var overlay = document.getElementById("imageLightboxOverlay");
+    overlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("imageLightboxClose").focus();
+    document.addEventListener("keydown", imageLightboxKeydown);
+  }
+
+  function closeImageLightbox() {
+    document.getElementById("imageLightboxOverlay").classList.remove("is-open");
+    document.getElementById("imageLightboxImg").src = "";
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", imageLightboxKeydown);
+    if (imageLightboxLastFocused) imageLightboxLastFocused.focus();
+  }
+
+  function imageLightboxKeydown(e) {
+    if (e.key === "Escape") closeImageLightbox();
+  }
+
+  document.addEventListener("click", function (e) {
+    var img = e.target.closest(".gallery-thumb, .inline-thumb");
+    if (img && img.tagName === "IMG") {
+      openImageLightbox(img.currentSrc || img.src, img.alt || "");
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") &&
+        e.target.matches && e.target.matches(".gallery-thumb, .inline-thumb")) {
+      e.preventDefault();
+      openImageLightbox(e.target.currentSrc || e.target.src, e.target.alt || "");
+    }
+  });
+</script>
