@@ -1284,3 +1284,14 @@ body {
   color: var(--umber-lt);
   font-style: italic;
 }
+
+/* ── Fun Stuff page: joke picture ─────────────────────────────────────────── */
+.joke-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+.joke-image + .joke-text {
+  margin-top: 14px;
+}
