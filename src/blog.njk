@@ -19,56 +19,70 @@ description: Weekly reflections from Sit Raleigh, expanding on each week's teach
   <div class="section-inner">
     {% set posts = collections.blog | sortByDate | reverse %}
     {% if posts.length %}
+    {% set yearGroups = posts | groupByYear %}
     <div class="blog-layout">
-      <aside class="blog-year-filter" aria-label="Filter posts by year">
+      <aside class="blog-year-filter" aria-label="Jump to year">
         <div class="section-label" style="margin-bottom:14px;">Jump to year</div>
         <div class="year-filter-list" id="yearFilterList">
-          <button type="button" class="year-filter-btn is-active" data-year="all" aria-pressed="true">
-            All <span class="year-filter-count">{{ posts.length }}</span>
-          </button>
-          {% for yc in posts | yearCounts %}
-          <button type="button" class="year-filter-btn" data-year="{{ yc.year }}" aria-pressed="false">
-            {{ yc.year }} <span class="year-filter-count">{{ yc.count }}</span>
-          </button>
+          {% for group in yearGroups %}
+          <a href="#year-{{ group.year }}" class="year-filter-btn{% if loop.first %} is-active{% endif %}" data-year="{{ group.year }}">
+            {{ group.year }} <span class="year-filter-count">{{ group.posts.length }}</span>
+          </a>
           {% endfor %}
         </div>
       </aside>
-      <div class="blog-grid" id="blogGrid">
-        {% for post in posts %}
-        <a href="{{ post.url }}" class="blog-card" data-year="{{ post.data.date | yearOnly }}">
-          {% if post.data.featured_image %}
-          <div class="blog-card-img" style="background-image:url('{{ post.data.featured_image }}');"></div>
-          {% endif %}
-          <div class="blog-card-body">
-            <div class="blog-card-date">{{ post.data.date | shortDate }}{% if post.data.author %} &middot; {{ post.data.author }}{% endif %}</div>
-            <h2 class="blog-card-title">{{ post.data.title }}</h2>
-            {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
-            <span class="blog-card-more">Read &rarr;</span>
+
+      <div class="blog-main">
+        <div class="blog-flag-divider">
+          <img src="/images/prayer-flags.png" alt="" class="blog-flag-img" loading="lazy">
+        </div>
+
+        {% for group in yearGroups %}
+        <section class="blog-year-group" id="year-{{ group.year }}" data-year="{{ group.year }}">
+          <h2 class="blog-year-heading">{{ group.year }}</h2>
+          <div class="blog-grid">
+            {% for post in group.posts %}
+            <a href="{{ post.url }}" class="blog-card">
+              {% if post.data.featured_image %}
+              <div class="blog-card-img" style="background-image:url('{{ post.data.featured_image }}');"></div>
+              {% endif %}
+              <div class="blog-card-body">
+                <div class="blog-card-date">{{ post.data.date | shortDate }}{% if post.data.author %} &middot; {{ post.data.author }}{% endif %}</div>
+                <h3 class="blog-card-title">{{ post.data.title }}</h3>
+                {% if post.data.summary %}<p class="blog-card-summary">{{ post.data.summary }}</p>{% endif %}
+                <span class="blog-card-more">Read &rarr;</span>
+              </div>
+            </a>
+            {% endfor %}
           </div>
-        </a>
+        </section>
+        {% if not loop.last %}
+        <div class="blog-flag-divider">
+          <img src="/images/prayer-flags.png" alt="" class="blog-flag-img" loading="lazy">
+        </div>
+        {% endif %}
         {% endfor %}
       </div>
     </div>
 
     <script>
       (function () {
-        var buttons = document.querySelectorAll("#yearFilterList .year-filter-btn");
-        var cards = document.querySelectorAll("#blogGrid .blog-card");
-        buttons.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            buttons.forEach(function (b) {
-              b.classList.remove("is-active");
-              b.setAttribute("aria-pressed", "false");
-            });
-            btn.classList.add("is-active");
-            btn.setAttribute("aria-pressed", "true");
-            var year = btn.getAttribute("data-year");
-            cards.forEach(function (card) {
-              var show = year === "all" || card.getAttribute("data-year") === year;
-              card.style.display = show ? "" : "none";
-            });
+        var links = Array.prototype.slice.call(document.querySelectorAll("#yearFilterList .year-filter-btn"));
+        var sections = Array.prototype.slice.call(document.querySelectorAll(".blog-year-group"));
+        if (!links.length || !sections.length || !("IntersectionObserver" in window)) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var year = entry.target.getAttribute("data-year");
+              links.forEach(function (link) {
+                link.classList.toggle("is-active", link.getAttribute("data-year") === year);
+              });
+            }
           });
-        });
+        }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+
+        sections.forEach(function (section) { observer.observe(section); });
       })();
     </script>
     {% else %}
