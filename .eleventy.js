@@ -52,6 +52,23 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
   eleventyConfig.addFilter("nl2br", (str) => str ? str.replace(/\n/g, "<br>") : "");
   eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
+  eleventyConfig.addFilter("yearCounts", (posts) => {
+    const map = {};
+    posts.forEach((p) => {
+      const d = parseDate(p.data.date);
+      if (!isNaN(d)) {
+        const y = d.getUTCFullYear();
+        map[y] = (map[y] || 0) + 1;
+      }
+    });
+    return Object.keys(map)
+      .map((y) => ({ year: +y, count: map[y] }))
+      .sort((a, b) => b.year - a.year);
+  });
+  eleventyConfig.addFilter("yearOnly", (v) => {
+    const d = parseDate(v);
+    return isNaN(d) ? "" : d.getUTCFullYear();
+  });
   eleventyConfig.addFilter("inlineThumbs", (html) => {
     if (!html) return html;
     return html.replace(/<img\s+([^>]*?)\/?>/g, (match, attrs) => {
