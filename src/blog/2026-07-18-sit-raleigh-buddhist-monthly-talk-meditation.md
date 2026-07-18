@@ -12,3 +12,7 @@ Meditation Society
 Monthly Talk & Meditation
 
 November 18th, 12-2pm
+
+
+
+## This Saturday, November the 18th, we will explore what Buddhists call "practice".  12 noon to 2pm at Ashtanga Yoga of Raleigh, 302 Pebble Creek Dr, Cary NC.
