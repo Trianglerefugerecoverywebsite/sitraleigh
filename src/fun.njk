@@ -18,7 +18,12 @@ description: A little levity — jokes and short stories about Buddhism and prac
     <div class="joke-list">
       {% for joke in jokes.jokes %}
       <div class="joke-card">
+        {% if joke.image %}
+        <img src="{{ joke.image }}" alt="{{ joke.text | default('Joke picture', true) }}" class="joke-image">
+        {% endif %}
+        {% if joke.text %}
         <p class="joke-text">{{ joke.text }}</p>
+        {% endif %}
         {% if joke.source %}<p class="joke-source">&mdash; {{ joke.source }}</p>{% endif %}
       </div>
       {% endfor %}
