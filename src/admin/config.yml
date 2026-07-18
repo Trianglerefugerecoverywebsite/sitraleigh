@@ -148,7 +148,11 @@ collections:
       - { label: "Continuing this week's teaching", name: "newsletter_teaching", widget: "string", required: false, hint: "The newsletter teaching this post expands on, e.g. The Five Hindrances: Ill Will (Vyāpāda). Leave blank if none." }
       - { label: "Instagram video URL", name: "instagram_url", widget: "string", required: false, hint: "Paste the Instagram post or reel link for the weekly ~1 min talk. Leave blank if none." }
       - { label: "Featured image", name: "featured_image", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching — write freely. Headings, quotes, and links all work." }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The full teaching — write freely. Headings, quotes, and links all work. You can also insert photos right in the text using the image button in the toolbar — they'll automatically show as small clickable thumbnails." }
+      - { label: "Gallery photos", name: "gallery", widget: "list", required: false, hint: "Extra photos shown in a small square gallery right after the post text. Anyone can click a photo on the live site to see it full size.", fields: [
+          { label: "Photo", name: "image", widget: "image" },
+          { label: "Caption", name: "caption", widget: "string", required: false, hint: "Optional — shown under the full-size photo when clicked." }
+        ] }
       - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, metta, mindfulness" }
 
   # ─── SITE PAGES (rich text) ─────────────────────────────────────────────────
