@@ -69,6 +69,20 @@ module.exports = function(eleventyConfig) {
     const d = parseDate(v);
     return isNaN(d) ? "" : d.getUTCFullYear();
   });
+  eleventyConfig.addFilter("groupByYear", (posts) => {
+    const map = {};
+    posts.forEach((p) => {
+      const d = parseDate(p.data.date);
+      if (!isNaN(d)) {
+        const y = d.getUTCFullYear();
+        if (!map[y]) map[y] = [];
+        map[y].push(p);
+      }
+    });
+    return Object.keys(map)
+      .sort((a, b) => b - a)
+      .map((y) => ({ year: +y, posts: map[y] }));
+  });
   eleventyConfig.addFilter("inlineThumbs", (html) => {
     if (!html) return html;
     return html.replace(/<img\s+([^>]*?)\/?>/g, (match, attrs) => {
