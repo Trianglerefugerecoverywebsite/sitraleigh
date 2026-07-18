@@ -3,7 +3,7 @@ title: November - Hour Long Meditation Class at Dix Park Chapel with teacher
   Cary Brief
 type: Event
 date: 2026-11-25
-time: The Chapel at Dix ParkRaleigh, NC
+time: "10am "
 location_name: The Chapel at Dix ParkRaleigh, NC
 map_link: https://www.google.com/maps/dir//1030+Richardson+Dr,+Raleigh,+NC+27603/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x89ac5f362057a5e7:0xa4542fc3f1b75d05?sa=X&ved=2ahUKEwifqLzzzNqVAxV738kDHeN0NKsQlDt6BAgNEAA
 description: >-
