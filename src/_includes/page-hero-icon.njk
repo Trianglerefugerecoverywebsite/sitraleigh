@@ -1,0 +1,5 @@
+{% for item in nav.items %}
+{% if page.url == item.url and item.icon %}
+<img src="{{ item.icon }}" alt="" class="page-hero-icon">
+{% endif %}
+{% endfor %}
