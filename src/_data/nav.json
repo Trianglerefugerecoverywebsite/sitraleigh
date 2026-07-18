@@ -32,7 +32,8 @@
     {
       "label": "Events",
       "url": "/events/",
-      "icon": ""
+      "icon": "/images/uploads/schedule-rino.png",
+      "icon_size": 200
     },
     {
       "label": "About",
