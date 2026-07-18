@@ -25,6 +25,7 @@ collections:
               - { label: "Label", name: "label", widget: "string", hint: "The text shown in the menu, e.g. Schedule" }
               - { label: "Link", name: "url", widget: "string", hint: "The page this points to, e.g. /schedule/ — must exactly match an existing page, including the slashes on both ends." }
               - { label: "Icon / Picture", name: "icon", widget: "image", required: false, hint: "Optional — shows next to the title banner at the top of this page (not in the menu itself). Only appears on that one page." }
+              - { label: "Icon Size (in pixels)", name: "icon_size", widget: "number", value_type: "int", required: false, default: 300, hint: "How tall the picture shows, in pixels. Try 300 to start — lower this (e.g. 200) if it's crowding the top of the page, raise it (e.g. 400) if you want it bigger." }
 
   # ─── THIS WEEK'S TEACHING (single, always-visible banner) ───────────────────
   - name: "this_week"
