@@ -1,5 +1,6 @@
 ---
-title: Hour Long Meditation Class at Dix Park Chapel with teacher Cary Brief
+title: September - Hour Long Meditation Class at Dix Park Chapel with teacher
+  Cary Brief
 type: Event
 date: 2026-09-23
 time: 10am
