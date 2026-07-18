@@ -101,12 +101,22 @@ body {
   list-style: none;
 }
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--umber-lt);
   transition: color 0.2s;
+}
+.nav-item-icon {
+  height: 22px;
+  width: auto;
+  max-width: 28px;
+  object-fit: contain;
+  display: block;
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
