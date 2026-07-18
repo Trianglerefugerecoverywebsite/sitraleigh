@@ -613,19 +613,20 @@ body {
   bottom: clamp(2rem, 4vw, 3rem);
   height: 300px;
   width: auto;
-  max-width: 340px;
+  max-width: 500px;
   object-fit: contain;
   pointer-events: none;
 }
 @media (max-width: 1000px) {
-  .page-hero-icon { height: 220px; max-width: 260px; }
+  .page-hero-icon { max-height: 220px; max-width: 260px; }
 }
 @media (max-width: 768px) {
   .page-hero-icon {
     position: static;
     display: block;
     margin: 1.5rem auto 0;
-    height: 150px;
+    max-height: 150px;
+    height: auto;
     max-width: 100%;
   }
 }
