@@ -97,6 +97,22 @@ collections:
       - { label: "Media Type", name: "media_type", widget: "select", options: ["link", "youtube", "audio", "video"], default: "link", hint: "Choose 'link' for Insight Timer (opens in a new tab). 'youtube' or 'audio' play on the page." }
       - { label: "Topics / Tags", name: "tags", widget: "list", required: false, hint: "e.g. hindrances, eightfold-path, metta" }
 
+  # ─── FUN STUFF (jokes) ───────────────────────────────────────────────────────
+  - name: "fun"
+    label: "Fun Stuff"
+    files:
+      - label: "Jokes"
+        name: "jokes"
+        file: "src/_data/jokes.json"
+        fields:
+          - name: "jokes"
+            label: "Jokes"
+            widget: "list"
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Joke", name: "text", widget: "text", hint: "The joke or short story itself — keep it short and sweet." }
+              - { label: "Source / Credit", name: "source", widget: "string", required: false, hint: "Optional — e.g. 'heard from a student' or where it came from." }
+
   # ─── SHOP / MERCH ───────────────────────────────────────────────────────────
   - name: "shop"
     label: "Shop"
