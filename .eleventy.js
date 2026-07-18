@@ -52,6 +52,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
   eleventyConfig.addFilter("nl2br", (str) => str ? str.replace(/\n/g, "<br>") : "");
   eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
+  eleventyConfig.addFilter("inlineThumbs", (html) => {
+    if (!html) return html;
+    return html.replace(/<img\s+([^>]*?)\/?>/g, (match, attrs) => {
+      if (/\bclass\s*=\s*"([^"]*)"/.test(attrs)) {
+        return `<img ${attrs.replace(/\bclass\s*=\s*"([^"]*)"/, 'class="$1 inline-thumb"')} tabindex="0" role="button">`;
+      }
+      return `<img ${attrs} class="inline-thumb" tabindex="0" role="button">`;
+    });
+  });
 
   return {
     dir: {
