@@ -8,7 +8,8 @@
     {
       "label": "Schedule",
       "url": "/schedule/",
-      "icon": "/images/uploads/nav-icon-schedule-rhino.png"
+      "icon": "/images/uploads/nav-icon-schedule-rhino.png",
+      "icon_size": 200
     },
     {
       "label": "Teachings",
