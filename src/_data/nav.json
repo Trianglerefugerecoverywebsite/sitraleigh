@@ -1,13 +1,49 @@
 {
   "items": [
-    { "label": "Home", "url": "/", "icon": "" },
-    { "label": "Schedule", "url": "/schedule/", "icon": "/images/uploads/nav-icon-schedule-rhino.png" },
-    { "label": "Teachings", "url": "/teachings/", "icon": "" },
-    { "label": "Blog", "url": "/blog/", "icon": "" },
-    { "label": "Shop", "url": "/shop/", "icon": "" },
-    { "label": "Events", "url": "/events/", "icon": "" },
-    { "label": "About", "url": "/about/", "icon": "" },
-    { "label": "Glossary", "url": "/glossary/", "icon": "" },
-    { "label": "Contact", "url": "/contact/", "icon": "" }
+    {
+      "label": "Home",
+      "url": "/",
+      "icon": ""
+    },
+    {
+      "label": "Schedule",
+      "url": "/schedule/",
+      "icon": "/images/uploads/nav-icon-schedule-rhino.png"
+    },
+    {
+      "label": "Teachings",
+      "url": "/teachings/",
+      "icon": "/images/uploads/teaching-rino.png"
+    },
+    {
+      "label": "Blog",
+      "url": "/blog/",
+      "icon": "/images/uploads/blogging-rino.png"
+    },
+    {
+      "label": "Shop",
+      "url": "/shop/",
+      "icon": ""
+    },
+    {
+      "label": "Events",
+      "url": "/events/",
+      "icon": ""
+    },
+    {
+      "label": "About",
+      "url": "/about/",
+      "icon": ""
+    },
+    {
+      "label": "Glossary",
+      "url": "/glossary/",
+      "icon": ""
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/",
+      "icon": ""
+    }
   ]
 }
