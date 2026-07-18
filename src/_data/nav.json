@@ -50,7 +50,8 @@
     {
       "label": "Contact",
       "url": "/contact/",
-      "icon": ""
+      "icon": "/images/uploads/contact-rino.png",
+      "icon_size": 200
     }
   ]
 }
