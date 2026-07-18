@@ -70,6 +70,7 @@ body {
   border-bottom: 0.5px solid rgba(122, 96, 48, 0.2);
 }
 .nav-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,9 +102,6 @@ body {
   list-style: none;
 }
 .nav-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -111,12 +109,19 @@ body {
   color: var(--umber-lt);
   transition: color 0.2s;
 }
-.nav-item-icon {
-  height: 22px;
+.nav-page-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 64px;
   width: auto;
-  max-width: 28px;
+  max-width: 130px;
   object-fit: contain;
-  display: block;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .nav-page-icon { display: none; }
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
