@@ -1,6 +1,6 @@
 ---
 title: The Four Noble Truths
-date: 2026-05-17
+date: 2025-05-17
 author: Cary Keishin Brief
 summary: We'll explore the 4 truths, through better understanding of these we
   reduce our suffering.
