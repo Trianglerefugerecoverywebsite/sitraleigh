@@ -1249,3 +1249,38 @@ body {
 @media (max-width: 640px) {
   .blog-flag-divider { margin-bottom: 28px; }
 }
+
+/* ── Blog sidebar: Fun Stuff link ─────────────────────────────────────────── */
+.year-filter-btn--fun {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 0.5px solid rgba(122, 96, 48, 0.3);
+}
+
+/* ── Fun Stuff page: joke list ────────────────────────────────────────────── */
+.joke-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.joke-card {
+  background: var(--white);
+  border: 0.5px solid rgba(122, 96, 48, 0.18);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  transition: border-color 0.2s;
+}
+.joke-card:hover { border-color: var(--gold); }
+.joke-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--umber-mid);
+}
+.joke-source {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--umber-lt);
+  font-style: italic;
+}
