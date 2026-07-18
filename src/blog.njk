@@ -29,6 +29,9 @@ description: Weekly reflections from Sit Raleigh, expanding on each week's teach
             {{ group.year }} <span class="year-filter-count">{{ group.posts.length }}</span>
           </a>
           {% endfor %}
+          <a href="/fun/" class="year-filter-btn year-filter-btn--fun">
+            Fun Stuff {% if jokes.jokes.length %}<span class="year-filter-count">{{ jokes.jokes.length }}</span>{% endif %}
+          </a>
         </div>
       </aside>
 
