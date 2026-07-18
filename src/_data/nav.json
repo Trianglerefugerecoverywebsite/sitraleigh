@@ -44,12 +44,14 @@
     {
       "label": "Glossary",
       "url": "/glossary/",
-      "icon": ""
+      "icon": "/images/uploads/gloss-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Contact",
       "url": "/contact/",
-      "icon": ""
+      "icon": "/images/uploads/contact-rino.png",
+      "icon_size": 200
     }
   ]
 }
