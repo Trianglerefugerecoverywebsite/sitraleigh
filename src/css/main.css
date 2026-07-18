@@ -102,6 +102,9 @@ body {
   list-style: none;
 }
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -109,19 +112,12 @@ body {
   color: var(--umber-lt);
   transition: color 0.2s;
 }
-.nav-page-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 64px;
+.nav-item-icon {
+  height: 36px;
   width: auto;
-  max-width: 130px;
+  max-width: 48px;
   object-fit: contain;
-  pointer-events: none;
-}
-@media (max-width: 768px) {
-  .nav-page-icon { display: none; }
+  display: block;
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
