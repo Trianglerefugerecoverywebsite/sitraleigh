@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Fun Stuff
+description: A little levity — jokes and short stories about Buddhism and practice, from Sit Raleigh.
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">A little levity</p>
+    <h1 class="page-headline">Fun Stuff</h1>
+    <p class="page-sub">Practice doesn&rsquo;t have to be so serious all the time. A running collection of jokes and short stories, added to now and then.</p>
+  </div>
+</div>
+
+<section class="section section--parchment">
+  <div class="section-inner">
+    {% if jokes.jokes.length %}
+    <div class="joke-list">
+      {% for joke in jokes.jokes %}
+      <div class="joke-card">
+        <p class="joke-text">{{ joke.text }}</p>
+        {% if joke.source %}<p class="joke-source">&mdash; {{ joke.source }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align:center;color:var(--umber-lt);">Nothing here yet &mdash; check back soon.</p>
+    {% endif %}
+  </div>
+</section>
