@@ -1153,3 +1153,64 @@ body {
   margin-top: 14px;
   font-size: 14px;
 }
+
+/* ── Blog: year-filter sidebar ────────────────────────────────────────────── */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+.blog-year-filter {
+  position: sticky;
+  top: 112px; /* clears the sticky nav */
+}
+.year-filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.year-filter-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0.5px solid rgba(122, 96, 48, 0.18);
+  border-radius: var(--radius-sm, 6px);
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--umber-mid);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.year-filter-btn:hover,
+.year-filter-btn:focus-visible {
+  border-color: var(--gold);
+  color: var(--umber);
+}
+.year-filter-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.year-filter-btn.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+.year-filter-count {
+  font-size: 12px;
+  color: var(--umber-lt);
+}
+.year-filter-btn.is-active .year-filter-count {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+@media (max-width: 720px) {
+  .blog-layout { grid-template-columns: 1fr; }
+  .blog-year-filter { position: static; }
+  .year-filter-list { flex-direction: row; flex-wrap: wrap; }
+}
