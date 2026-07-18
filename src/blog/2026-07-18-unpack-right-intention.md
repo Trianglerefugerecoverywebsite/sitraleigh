@@ -1,6 +1,6 @@
 ---
 title: Unpack right intention
-date: 2026-03-15
+date: 2025-03-15
 author: Cary Keishin Brief
 summary: Right Intention!
 ---
