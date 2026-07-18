@@ -16,7 +16,7 @@ description: Upcoming events, day-longs, and retreats with Sit Raleigh in Raleig
 {% set allEvents   = collections.events | whereType("Event") %}
 {% set allRetreats = collections.events | whereType("Retreat") %}
 {% set futureEvents = allEvents | sortByDate | futureOnly %}
-{% set pastEvents   = allEvents | sortByDate | reverse %}
+{% set pastEvents   = allEvents | sortByDate | pastOnly | reverse %}
 
 <section class="section section--parchment">
   <div class="section-inner">
