@@ -36,7 +36,8 @@
     {
       "label": "About",
       "url": "/about/",
-      "icon": ""
+      "icon": "/images/uploads/about-rino.png",
+      "icon_size": 200
     },
     {
       "label": "Glossary",
