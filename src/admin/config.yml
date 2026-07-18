@@ -9,6 +9,23 @@ publish_mode: editorial_workflow
 
 collections:
 
+  # ─── NAVIGATION ─────────────────────────────────────────────────────────────
+  - name: "nav"
+    label: "Navigation"
+    files:
+      - label: "Menu Items"
+        name: "nav"
+        file: "src/_data/nav.json"
+        fields:
+          - name: "items"
+            label: "Menu Items"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "The text shown in the menu, e.g. Schedule" }
+              - { label: "Link", name: "url", widget: "string", hint: "The page this points to, e.g. /schedule/ — must exactly match an existing page, including the slashes on both ends." }
+              - { label: "Icon / Picture", name: "icon", widget: "image", required: false, hint: "Optional small picture shown next to the label. Works best as a simple, roughly-square image." }
+
   # ─── THIS WEEK'S TEACHING (single, always-visible banner) ───────────────────
   - name: "this_week"
     label: "This Week's Teaching"
