@@ -1233,23 +1233,18 @@ body {
   margin-top: 40px;
 }
 .blog-flag-divider {
-  background: var(--umber);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 22px 0;
+  padding: 0;
   margin-bottom: 40px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
 }
 .blog-flag-img {
-  height: 120px;
-  width: auto;
-  max-width: 92%;
-  object-fit: contain;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 @media (max-width: 640px) {
-  .blog-flag-img { height: 80px; }
-  .blog-flag-divider { padding: 16px 0; }
+  .blog-flag-divider { margin-bottom: 28px; }
 }
