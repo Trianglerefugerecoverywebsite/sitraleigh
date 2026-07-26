@@ -144,9 +144,19 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Order", name: "order", widget: "number", value_type: "int", default: 1, hint: "Controls order on the Shop page (1 = first)." }
-      - { label: "Price", name: "price", widget: "string", required: false, hint: "e.g. $16 — set by TeePublic; update if it changes." }
+      - { label: "Price or note", name: "price", widget: "string", required: false, hint: "Shown as a small label — e.g. $16, or a note like 'Offered by dana'. Leave blank to hide it." }
       - { label: "Product image", name: "image", widget: "image", required: false, choose_url: true, hint: "Click 'Choose an image' to upload your own photo — or in that same window, click 'Insert from URL' to paste a picture link (like a TeePublic photo) instead." }
-      - { label: "Buy link (TeePublic)", name: "buy_url", widget: "string", hint: "The full TeePublic product link — opens in a new tab." }
+      - label: "What kind of link is this?"
+        name: "link_type"
+        widget: "select"
+        default: "store"
+        options:
+          - { label: "Go to an online store (opens a new tab)", value: "store" }
+          - { label: "Email someone", value: "email" }
+          - { label: "Go to another page on this site", value: "page" }
+        hint: "Pick how the button should work. 'Email someone' turns the button into an email link."
+      - { label: "Link or email address", name: "buy_url", widget: "string", required: false, hint: "For a store: paste the full web link. For email: just the address (e.g. carybrief108@gmail.com). For a page: e.g. /schedule/." }
+      - { label: "Button text", name: "cta_label", widget: "string", required: false, hint: "What the button says — e.g. 'Shop on TeePublic', 'Email Cary', 'Learn more'. Leave blank for a sensible default." }
       - { label: "Description", name: "description", widget: "text", required: false }
 
   # ─── WRITTEN TEACHINGS ──────────────────────────────────────────────────────
