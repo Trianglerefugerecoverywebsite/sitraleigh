@@ -57,73 +57,25 @@ description: Get in touch with Sit Raleigh — Theravāda meditation in Raleigh,
     <h2 class="ml-heading" id="ml-heading">{{ mailing_list.heading }}</h2>
     <p class="ml-sub">{{ mailing_list.subheading }}</p>
 
-    {% if mailing_list.provider == "mailchimp" and mailing_list.form_action %}
-    {# ── Mailchimp embed ─────────────────────────── #}
-    <form
-      action="{{ mailing_list.form_action }}"
-      method="post"
-      target="_blank"
-      class="ml-form"
-      novalidate
-    >
-      <div class="ml-input-row">
-        <label for="ml-email" class="sr-only">Email address</label>
-        <input
-          type="email"
-          name="EMAIL"
-          id="ml-email"
-          placeholder="{{ mailing_list.placeholder }}"
-          required
-          autocomplete="email"
+    {# ── QR code → Brevo signup form ── #}
+    <div class="ml-qr">
+      <a
+        href="https://e3194ba2.sibforms.com/serve/MUIFAC8clPLTgguqWVlFlU4zXlKVFsbjw-gWLmUoFx8w-_PBupnwpcRl2RELJxVhpNQ1iFWl3BrH2bdNpIkkocc9G13FGc--k5XvgI4ffuYVQoP7chFpfYntSfoHqRy7sMc7sQCXKWoywqu5qNLDxrD_Bv5AFlOEmiXvPXbzuxY1CO2V-0Qn6hKcGDS68E2mCbpl515zHnh8XBYW"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-qr-link"
+        aria-label="Open the Sit Raleigh email signup form"
+      >
+        <img
+          src="/images/newsletter-qr.png"
+          alt="QR code — scan to join the Sit Raleigh email list"
+          width="220"
+          height="220"
+          loading="lazy"
         />
-        {# Mailchimp bot-buster — do not remove #}
-        <div aria-hidden="true" style="position:absolute;left:-5000px;">
-          <input type="text" name="b_REPLACE_ME" tabindex="-1" value="" />
-        </div>
-        <button type="submit" class="ml-btn">{{ mailing_list.button_label }}</button>
-      </div>
-    </form>
-
-    {% elif mailing_list.provider == "convertkit" and mailing_list.form_action %}
-    {# ── ConvertKit embed ────────────────────────── #}
-    <form
-      action="{{ mailing_list.form_action }}"
-      method="post"
-      class="ml-form"
-      novalidate
-    >
-      <div class="ml-input-row">
-        <label for="ml-email-ck" class="sr-only">Email address</label>
-        <input
-          type="email"
-          name="email_address"
-          id="ml-email-ck"
-          placeholder="{{ mailing_list.placeholder }}"
-          required
-          autocomplete="email"
-        />
-        <button type="submit" class="ml-btn">{{ mailing_list.button_label }}</button>
-      </div>
-    </form>
-
-    {% else %}
-    {# ── No provider yet — placeholder ──────────── #}
-    <div class="ml-form">
-      <div class="ml-input-row">
-        <label for="ml-email-ph" class="sr-only">Email address</label>
-        <input
-          type="email"
-          id="ml-email-ph"
-          placeholder="{{ mailing_list.placeholder }}"
-          autocomplete="email"
-          disabled
-          title="Mailing list coming soon"
-        />
-        <button type="button" class="ml-btn" disabled>{{ mailing_list.button_label }}</button>
-      </div>
-      <p class="ml-coming-soon">Mailing list setup in progress — check back soon.</p>
+      </a>
+      <p class="ml-qr-caption">Point your phone camera at the code to subscribe</p>
     </div>
-    {% endif %}
 
     <p class="ml-fine-print">{{ mailing_list.fine_print }}</p>
   </div>
@@ -223,6 +175,36 @@ description: Get in touch with Sit Raleigh — Theravāda meditation in Raleigh,
   color: rgba(168,144,96,0.6);
   margin-top: 10px;
   font-style: italic;
+}
+.ml-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.ml-qr-link {
+  display: inline-block;
+  padding: 16px;
+  background: var(--parchment);
+  border-radius: var(--radius-md);
+  line-height: 0;
+  border: 0.5px solid rgba(212,184,122,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ml-qr-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.ml-qr-link img {
+  display: block;
+  width: 220px;
+  height: 220px;
+}
+.ml-qr-caption {
+  font-size: 13px;
+  color: var(--gold-lt);
+  letter-spacing: 0.03em;
+  margin: 0;
 }
 
 @media (max-width: 480px) {
