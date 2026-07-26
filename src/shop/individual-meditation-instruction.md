@@ -3,7 +3,9 @@ title: Individual Meditation Instruction
 order: 1
 price: Mentoring is offered by Dana
 image: /images/uploads/image-7-12-26-at-6.45 am.png
-buy_url: https://cerulean-cupcake-965c7d.netlify.app/shop/
+link_type: email
+buy_url: CaryBrief108@gmail.com
+cta_label: Email Cary!
 description: >-
   If you are new to meditation and practice or just need some guidance to
   refresh or renew your practice mentoring might be a good fit for you.
