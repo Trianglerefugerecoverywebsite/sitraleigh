@@ -1,7 +1,7 @@
 ---
 title: Definitions
 order: 1
-summary: Here are definitions of out common buddhism phrases.
+summary: Here are definitions of our common buddhism phrases.
 featured_image: /images/uploads/img_1017.jpeg
 ---
 Here are some basic definitions of English and Pali words you may come across during talks, meditations and study of Buddhist practice.
