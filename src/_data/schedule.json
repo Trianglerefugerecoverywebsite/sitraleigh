@@ -1,26 +1,26 @@
 {
   "sits": [
     {
-      "day": "Tuesday",
+      "notes": "414 Fayetteville St, 4th Floor, Raleigh 27601",
+      "details": "Code entry - for code please text with message NEST CODE to 919-306-9495 prior to event - Code will also be available in the weekly newsletter.   - Please take elevator to fourth floor.  Bring a cushion if you have one! ",
       "time": "7:00 – 8:00 PM",
-      "location": "GreenDoor Vitality",
-      "format": "In-person",
-      "notes": "704 Glenwood Ave, Raleigh NC — free parking in rear",
-      "details": "",
       "address": "",
-      "map_link": "",
-      "link": ""
+      "location": "Nest Raleigh",
+      "format": "In-person",
+      "link": "",
+      "day": "Tuesday",
+      "map_link": ""
     },
     {
-      "day": "Saturday",
+      "notes": "Meet in front of the large silver gates on Beryl Road. Bring a cushion. Cancelled during storms. Parking on the street (please pay attention to signs) ",
+      "details": "This is a thirty minute silent meditation. Bring your own cushion and something for underneath it is not a bad idea.  We sit together and have sangha fellowship before and after for those that choose to. Depending on the time of year, bring appropriate clothing, insect and sun protection, etc.  All are welcome. ",
       "time": "9:25 AM",
-      "location": "NC Museum of Art",
-      "format": "Outdoor",
-      "notes": "Meet at the small building near the smokestack. Bring a cushion. Cancelled during storms.",
-      "details": "",
       "address": "",
-      "map_link": "",
-      "link": ""
+      "location": "JC Raulston Arboretum 4415 Beryl Road, Raleigh, NC 27606",
+      "format": "Outdoor",
+      "link": "",
+      "day": "Saturday",
+      "map_link": ""
     }
   ]
 }
