@@ -1,14 +1,6 @@
 {
   "places": [
     {
-      "name": "GreenDoor Vitality",
-      "address": "704 Glenwood Ave, Raleigh, NC 27603",
-      "map_embed": "",
-      "map_link": "https://maps.google.com/?q=704+Glenwood+Ave+Raleigh+NC",
-      "parking": "Free parking in the rear of the building.",
-      "notes": "Tuesday evening sits, 7:00–8:00 PM"
-    },
-    {
       "name": "NC Museum of Art",
       "address": "2110 Blue Ridge Rd, Raleigh, NC 27607",
       "map_embed": "",
@@ -23,6 +15,16 @@
       "map_link": "https://maps.google.com/?q=Dix+Park+Interfaith+Chapel+Raleigh+NC",
       "parking": "",
       "notes": "Monthly weekday meditations — sign up via Eventbrite."
+    },
+    {
+      "name": "JC Raulston Arboretum",
+      "address": "4415 Beryl Road, Raleigh NC 27606",
+      "notes": "meet in front of the Large Silver Gate at 9:25 am on Saturday practice days"
+    },
+    {
+      "name": "Nest Co-working Space - Tuesday nights at 7pm",
+      "address": "414 Fayetteville Street 4th Floor, Raleigh NC 27601",
+      "notes": "text 919-306-9495 with NEST CODE to enter proceed to elevator - 4th floor   Bring a cushion Please!"
     }
   ]
 }
