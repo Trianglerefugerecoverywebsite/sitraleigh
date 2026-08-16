@@ -30,7 +30,7 @@ description: Learn about Cary Keishin Brief and the Sit Raleigh Theravāda medit
         <blockquote style="font-family:var(--font-display);font-style:italic;font-size:26px;font-weight:300;color:var(--umber);line-height:1.5;border-left:2px solid var(--gold);padding-left:1.25rem;margin-bottom:1.5rem;">&ldquo;{{ about.pull_quote }}&rdquo;</blockquote>
         {% endif %}
         <div class="rich-text">
-          {{ about.bio_full | safe }}
+          {{ about.bio_full | markdown | safe }}
         </div>
         {% if about.tradition %}
         <p style="margin-top:1.5rem;font-size:12px;color:var(--gold-lt);letter-spacing:0.06em;">Tradition: {{ about.tradition }}</p>
