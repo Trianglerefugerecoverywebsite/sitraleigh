@@ -210,7 +210,7 @@ collections:
       - { label: "Nav Label", name: "nav_label", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # ─── ABOUT / TEACHER BIO ────────────────────────────────────────────────────
+# ─── ABOUT / TEACHER BIO ────────────────────────────────────────────────────
   - name: "about"
     label: "About"
     files:
@@ -221,7 +221,17 @@ collections:
           - { label: "Teacher Name", name: "teacher_name", widget: "string", default: "Cary Keishin Brief" }
           - { label: "Pull Quote", name: "pull_quote", widget: "string", hint: "Short memorable phrase shown on the homepage" }
           - { label: "Short Bio (homepage)", name: "bio_short", widget: "text" }
-          - { label: "Full Bio", name: "bio_full", widget: "markdown" }
+          - { label: "Full Bio", name: "bio_full", widget: "markdown", hint: "Cary's bio. For web links, use the Links section below instead of pasting addresses into the text — it's more reliable." }
+          - name: "links"
+            label: "Links"
+            label_singular: "Link"
+            widget: "list"
+            required: false
+            summary: "{{fields.label}}"
+            hint: "Links shown just below the bio. Add a label and paste the full web address — no special code needed."
+            fields:
+              - { label: "Link Text", name: "label", widget: "string", hint: "What the link says on the page — e.g. Read the article in Midtown magazine" }
+              - { label: "Web Address", name: "url", widget: "string", hint: "Paste the full address starting with https:// — e.g. https://www.midtownmag.com/a-quiet-revolution-in-raleigh/" }
           - { label: "Photo", name: "photo", widget: "image", required: false }
           - { label: "Email Address", name: "email", widget: "string" }
           - { label: "Tradition / Lineage", name: "tradition", widget: "string", default: "Theravāda" }
