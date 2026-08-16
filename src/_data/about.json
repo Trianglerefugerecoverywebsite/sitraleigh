@@ -2,8 +2,14 @@
   "teacher_name": "Cary Keishin Brief",
   "pull_quote": "Allowing difficulty to be our teacher.",
   "bio_short": "Cary Keishin Brief guides practice in the Theravāda tradition, rooted in the Buddha's earliest teachings. The Sit Raleigh community meets weekly for sitting meditation, dharma talks, and the kind of open inquiry that both challenges and comforts.",
-  "bio_full": "Cary Keishin Brief has been practicing and teaching in the Theravāda Buddhist tradition for many years. He founded Sit Raleigh to offer accessible, donation-based practice to anyone in the Triangle area, regardless of background or experience.\n\nThe teaching is offered by dana — generosity — so that the Dhamma remains available to all.\n\nCary currently is a chaplain at Wake Med Cary and at the Granville Correctional Institution in Butner, NC.  Prior to Wake Med, Cary served as the Buddhist Chaplain at Duke University, guiding the Buddhist Meditation Community at Duke, Resident Chaplain at Rex and Chaplain Intern at UNC Chapel Hill.\n\nCary's Buddhist Chaplaincy training was with Roshi Joan Halifax and Upaya Zen Center in Santa Fe, NM. \n\n[https://www.midtownmag.com/a-quiet-revolution-in-raleigh](www.midtownmag.com/a-quiet-revolution-in-raleigh/)\n\nAn article in Midtown magazine about Greendoor Vitality and our Tuesday night meditation group.",
+  "bio_full": "Cary Keishin Brief has been practicing and teaching in the Theravāda Buddhist tradition for many years. He founded Sit Raleigh to offer accessible, donation-based practice to anyone in the Triangle area, regardless of background or experience.\n\nThe teaching is offered by dana — generosity — so that the Dhamma remains available to all.\n\nCary currently is a chaplain at Wake Med Cary and at the Granville Correctional Institution in Butner, NC.  Prior to Wake Med, Cary served as the Buddhist Chaplain at Duke University, guiding the Buddhist Meditation Community at Duke, Resident Chaplain at Rex and Chaplain Intern at UNC Chapel Hill.\n\nCary's Buddhist Chaplaincy training was with Roshi Joan Halifax and Upaya Zen Center in Santa Fe, NM. [](www.midtownmag.com/a-quiet-revolution-in-raleigh/)\n\nAn article in Midtown magazine about Greendoor Vitality and our Tuesday night meditation group.",
   "photo": "/images/uploads/image-7-12-26-at-6.45 am.png",
   "email": "info@sitraleigh.com",
-  "tradition": "Theravāda"
+  "tradition": "Theravāda",
+  "links": [
+    {
+      "url": "https://www.midtownmag.com/a-quiet-revolution-in-raleigh",
+      "label": "Midtown Mag (A Quiet Revolutionary In Raleigh)"
+    }
+  ]
 }
