@@ -1,4 +1,9 @@
 const path = require("path");
+const markdownIt = require("markdown-it");
+
+// Renders markdown strings that live in JSON/data files (e.g. about.bio_full).
+// html: allow inline HTML · linkify: auto-link bare URLs · breaks: single newline => <br>
+const md = markdownIt({ html: true, linkify: true, breaks: true });
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
@@ -56,6 +61,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("unique", (arr) => [...new Set(arr)]);
   eleventyConfig.addFilter("reverse", (arr) => [...arr].reverse());
   eleventyConfig.addFilter("nl2br", (str) => str ? str.replace(/\n/g, "<br>") : "");
+
+  // Render a markdown string (for data-file fields like about.bio_full).
+  // Use in templates as:  {{ about.bio_full | markdown | safe }}
+  eleventyConfig.addFilter("markdown", (content) => {
+    if (!content) return "";
+    return md.render(String(content));
+  });
+
   eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
   eleventyConfig.addFilter("yearCounts", (posts) => {
     const map = {};
