@@ -40,7 +40,7 @@ title: false
           {% endif %}
         </div>
         {% if this_week.description %}
-        <p class="this-week-desc">{{ this_week.description }}</p>
+        <div class="this-week-desc">{{ this_week.description | markdown | safe }}</div>
         {% endif %}
         {% if this_week.registration_link %}
         <a href="{{ this_week.registration_link }}" class="btn-primary" target="_blank" rel="noopener">Register &rarr;</a>
