@@ -151,6 +151,47 @@ eleventyExcludeFromCollections: true
     margin:0 auto clamp(26px,5vw,34px);
   }
 
+  .visiting{
+    text-align:left;
+    max-width:24rem;
+    margin:0 auto clamp(28px,5vw,36px);
+    padding:20px 22px 18px;
+    background:var(--paper-deep);
+    border:1px solid var(--frame);
+    border-left:4px solid var(--clay-deep);
+    border-radius:6px;
+  }
+  .visiting-label{
+    margin:0 0 12px;
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+  }
+  .visiting-line{
+    margin:0 0 9px;
+    font-size:.95rem;
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .visiting-line:last-child{margin-bottom:0}
+  .visiting-line a{
+    color:var(--ink);
+    font-weight:600;
+    text-decoration:underline;
+    text-decoration-color:var(--clay-deep);
+    text-underline-offset:3px;
+    text-decoration-thickness:2px;
+  }
+  .visiting-line a:hover{color:var(--clay-deep)}
+  .visiting-line a:focus-visible{outline:3px solid var(--clay-deep);outline-offset:2px;border-radius:2px}
+  .visiting-line .tag{
+    font-weight:600;
+    color:var(--ink);
+  }
+  .visiting-line .tag::after{content:" \2014 ";color:var(--ink-soft);font-weight:400}
+
   .cta{
     display:inline-block;
     padding:15px 30px;
@@ -211,6 +252,13 @@ eleventyExcludeFromCollections: true
 
     <h1>Come sit with us.</h1>
     <p class="lede">Community meditation and Buddhist practice in the heart of downtown Raleigh. All are welcome &mdash; no experience needed.</p>
+
+    <aside class="visiting" aria-label="How to get in">
+      <p class="visiting-label">Getting in</p>
+      <p class="visiting-line"><span class="tag">Door code</span> <a href="https://ig.me/m/justsitraleighdhamma" target="_blank" rel="noopener">DM Cary on Instagram</a> to get it before you come.</p>
+      <p class="visiting-line"><span class="tag">Fourth floor</span> Take the elevator up.</p>
+      <p class="visiting-line"><span class="tag">Cushion</span> Bring one if you have it.</p>
+    </aside>
 
     <!-- CHANGE href below to wherever you want the button to go (home, schedule, etc.) -->
     <a class="cta" href="/">Explore Sit Raleigh</a>
