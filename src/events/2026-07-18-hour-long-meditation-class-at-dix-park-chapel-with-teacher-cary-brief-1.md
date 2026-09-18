@@ -16,10 +16,11 @@ description: >-
 
   Registration will open in late August, this is free and all are welcome.  Dana is appreciated. 
 registration_link: https://www.eventbrite.com/e/meditation-tickets-1993849422295
-registration_label: Registration is open now
+registration_label: https://www.eventbrite.com/e/meditation-tickets-1993849422295
 photo: /images/uploads/image-7-12-26-at-6.37 am.png
 featured: false
 eventbrite:
   button_label: Get tickets on Eventbrite u2192
   embed: true
+  url: https://www.eventbrite.com/e/meditation-tickets-1993849422295
 ---
