@@ -15,7 +15,8 @@ description: >-
 
 
   Registration will open in late August, this is free and all are welcome.  Dana is appreciated. 
-registration_label: Registration will open in late August
+registration_link: https://www.eventbrite.com/e/meditation-tickets-1993849422295
+registration_label: Registration is open now
 photo: /images/uploads/image-7-12-26-at-6.37 am.png
 featured: false
 eventbrite:
