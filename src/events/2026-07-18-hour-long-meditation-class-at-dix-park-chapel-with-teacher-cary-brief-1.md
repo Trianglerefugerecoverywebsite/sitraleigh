@@ -12,9 +12,10 @@ description: >-
   at the Interfaith Chapel at DIX park. There are four more of these this
   scheduled right now, August 19th,  September 23rd, October 21st and November
   25th  all Wedensdays at 10 AM.
-
+   https://www.eventbrite.com/e/meditation-tickets-1993849422295
 
   Registration will open in late August, this is free and all are welcome.  Dana is appreciated. 
+registration_link: https://www.eventbrite.com/e/meditation-tickets-1993849422295
 registration_label: Registration will open in late August
 photo: /images/uploads/image-7-12-26-at-6.37 am.png
 featured: false
