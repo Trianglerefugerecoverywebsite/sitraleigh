@@ -15,7 +15,7 @@ description: >-
 
   Registration will open in late September, this is a free event and all are welcome. Dana is appreciated. 
 
-  Sign up link https://www.eventbrite.com/e/meditation-tickets-1993849504541
+  Sign up link 
 registration_link: https://www.eventbrite.com/e/meditation-tickets-1993849504541
 registration_label: Register →
 photo: /images/uploads/image-7-12-26-at-6.37 am.png
