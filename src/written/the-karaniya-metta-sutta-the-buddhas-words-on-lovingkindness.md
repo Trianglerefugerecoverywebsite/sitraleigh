@@ -2,13 +2,13 @@
 title: "The Karaniya Metta Sutta : The Buddha's Words on Lovingkindness"
 order: 1
 summary: This most beautiful of teachings has almost all of the Buddha's wisdom
-  in one short teachings. This is a Sutta that is well worth reading or reciting
+  in one short teaching. I strongly suggest reading or reciting this Sutta
   daily.
 featured_image: /images/uploads/chatgpt-image-jul-16-2026-at-05_28_50-pm.png
 tags:
   - lovingkindness
 ---
-Last year I was asked to say a prayer during the Baccalaureate Ceremony for the graduating class at Duke University. It was in the main Chapel, at least 1800 people were present.  Students, family and faculty. After President Price gave his address I went up to the Ambo and read the words below ;
+Last year I had the opportunity to offer some words during the Baccalaureate Ceremony for the graduating class at Duke University. This was in the main Chapel, at least 1800 people were present made up of students, family and faculty. After President Price gave his congratulatory message, I went up to the Ambo and offered the words below ;
 
 This is what should be done
 	By one who is skilled in goodness,
@@ -54,7 +54,9 @@ The pure-hearted one, having clarity of vision,
 	Being freed from all sense desires,
 Is not born again into this world.
 
-Even though I knew this Sutta pretty well, I spent the weeks prior reading it over and over so I just about knew it by heart.  But that was not the important part - as I read this over and over each word became larger and clearer. Into this short teaching the Buddha distilled all his teaching. 
+Being asked to offer a few words to the graduating class was an honor. What was more moving was the fact that I was able to share the Buddha's instructions on how to be kind. 
+
+Even though I knew this Sutta pretty well, I spent the weeks leading up to the ceremony reading it over and over, so I just about knew it by heart.  But this was not the important part - as I read this over and over each word became larger and clearer. Into this short teaching the Buddha distilled all his wisdom on kindness. While some of his teachings are way to long to share in a two minute time slot, the Metta Sutta is just perfect. Not an extra word - no stories just powerfully clear instructions. 
 
 He tells us what should be done and by who - one who is skilled in goodness and knows the path of peace.
 
