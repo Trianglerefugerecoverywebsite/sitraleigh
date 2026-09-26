@@ -56,7 +56,7 @@ Is not born again into this world.
 
 Being asked to offer a few words to the graduating class was an honor. What was more moving was the fact that I was able to share the Buddha's instructions on how to be kind. 
 
-Even though I knew this Sutta pretty well, I spent the weeks leading up to the ceremony reading it over and over, so I just about knew it by heart.  But this was not the important part - as I read this over and over each word became larger and clearer. Into this short teaching the Buddha distilled all his wisdom on kindness. While some of his teachings are way to long to share in a two minute time slot, the Metta Sutta is just perfect. Not an extra word - no stories just powerfully clear instructions. 
+Even though I knew this Sutta pretty well, I spent the weeks leading up to the ceremony reading it over and over, so I just about knew it by heart.  But this was not the important part - as I read this over and over each word became larger and clearer. Into this short teaching the Buddha distilled all his wisdom on kindness. While some of his teachings are way too long to share in a two minute time slot, the Metta Sutta is just perfect. Not an extra word - just powerfully clear instructions. 
 
 He tells us what should be done and by who - one who is skilled in goodness and knows the path of peace.
 
