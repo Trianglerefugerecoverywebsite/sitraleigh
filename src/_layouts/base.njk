@@ -74,6 +74,9 @@
           <li><a href="/glossary/">Pāli Glossary</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
+          {% if whatsapp.enabled and whatsapp.show_in_footer and whatsapp.invite_link %}
+          <li><a href="{{ whatsapp.invite_link }}" target="_blank" rel="noopener">WhatsApp Community</a></li>
+          {% endif %}
         </ul>
       </div>
       <div>

@@ -1,0 +1,20 @@
+{% if whatsapp.enabled and whatsapp.invite_link %}
+<section class="whatsapp-section" aria-labelledby="wa-heading">
+  <div class="whatsapp-inner">
+    <div class="wa-icon" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/>
+        <path d="M9 8.5c.2-.4.5-.5.8-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.1.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3-.1.6-.5.8-.6.4-1.4.5-2.1.2-2.1-.8-3.8-2.5-4.6-4.6-.3-.7-.2-1.5.2-2.1z"/>
+      </svg>
+    </div>
+    <div class="wa-copy">
+      <h2 class="wa-heading" id="wa-heading">{{ whatsapp.heading }}</h2>
+      <p class="wa-sub">{{ whatsapp.subheading }}</p>
+    </div>
+    <div class="wa-action">
+      <a href="{{ whatsapp.invite_link }}" class="wa-btn" target="_blank" rel="noopener">{{ whatsapp.button_label }} &rarr;</a>
+      {% if whatsapp.fine_print %}<p class="wa-fine-print">{{ whatsapp.fine_print }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

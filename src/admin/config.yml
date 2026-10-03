@@ -322,6 +322,22 @@ collections:
             hint: "Choose your email provider — then paste the form action URL below"
           - { label: "Form Action URL", name: "form_action", widget: "string", required: false, hint: "From Mailchimp or ConvertKit embed code — the 'action' attribute of the form tag" }
 
+  # ─── WHATSAPP COMMUNITY ─────────────────────────────────────────────────────
+  - name: "whatsapp"
+    label: "WhatsApp Community"
+    files:
+      - label: "WhatsApp Settings"
+        name: "whatsapp"
+        file: "src/_data/whatsapp.json"
+        fields:
+          - { label: "Show WhatsApp Section", name: "enabled", widget: "boolean", default: true }
+          - { label: "Group Invite Link", name: "invite_link", widget: "string", hint: "From WhatsApp → group info → Invite via link. e.g. https://chat.whatsapp.com/…" }
+          - { label: "Heading", name: "heading", widget: "string", default: "Join the community on WhatsApp" }
+          - { label: "Subheading", name: "subheading", widget: "text" }
+          - { label: "Button Label", name: "button_label", widget: "string", default: "Join the WhatsApp group" }
+          - { label: "Fine Print", name: "fine_print", widget: "string", required: false }
+          - { label: "Show link in footer", name: "show_in_footer", widget: "boolean", default: true }
+
   # ─── EVENTBRITE SETTINGS ────────────────────────────────────────────────────
   - name: "eventbrite_settings"
     label: "Eventbrite Settings"
